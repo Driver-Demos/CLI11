@@ -58,17 +58,17 @@ The `rtrim` function removes trailing characters from a string that are present 
 
 ---
 ### remove\_quotes<!-- {{#callable:CLI::detail::remove_quotes}} -->
-The [`remove_quotes`](#detailremove_quotes) function iterates over a vector of strings, removing surrounding quotes and escaped characters from each string.
+The [`remove_quotes`](#remove_quotes) function iterates over a vector of strings, removing surrounding quotes and escaped characters from each string.
 - **Inputs**:
     - `args`: A reference to a vector of strings, where each string may have surrounding quotes and escaped characters to be removed.
 - **Control Flow**:
     - Iterate over each string in the vector `args`.
     - For each string, check if it starts and ends with a double quote ('"').
-    - If it does, call [`remove_quotes`](#detailremove_quotes) on the string to remove the quotes, then call [`remove_escaped_characters`](#stringremove_escaped_characters) to remove any escaped characters.
-    - If it does not start and end with a double quote, simply call [`remove_quotes`](#detailremove_quotes) on the string.
+    - If it does, call [`remove_quotes`](#remove_quotes) on the string to remove the quotes, then call [`remove_escaped_characters`](#stringremove_escaped_characters) to remove any escaped characters.
+    - If it does not start and end with a double quote, simply call [`remove_quotes`](#remove_quotes) on the string.
 - **Output**: The function modifies the input vector `args` in place, removing quotes and escaped characters from each string.
 - **Functions called**:
-    - [`CLI::detail::remove_quotes`](#detailremove_quotes)
+    - [`CLI::detail::remove_quotes`](#remove_quotes)
     - [`CLI::detail::std::string::remove_escaped_characters`](#stringremove_escaped_characters)
 
 
@@ -258,7 +258,7 @@ The `append_codepoint` function appends a UTF-8 encoded representation of a Unic
     - If the code point is between 0x10000 and 0x110000, encode it as a four-byte UTF-8 sequence and append all four bytes.
 - **Output**: The function modifies the input string `str` by appending the UTF-8 encoded representation of the input code point.
 - **Functions called**:
-    - [`CLI::detail::make_char`](#detailmake_char)
+    - [`CLI::detail::make_char`](#make_char)
 
 
 ---
@@ -280,7 +280,7 @@ The `remove_escaped_characters` function processes a string to remove escape seq
 - **Output**: A `std::string` that is the input string with escape sequences replaced by their corresponding characters.
 - **Functions called**:
     - [`CLI::detail::std::uint32_t::hexConvert`](#uint32_thexConvert)
-    - [`CLI::detail::append_codepoint`](#detailappend_codepoint)
+    - [`CLI::detail::append_codepoint`](#append_codepoint)
 
 
 ---
@@ -451,7 +451,7 @@ The `process_quoted_string` function processes a string to handle quoted or bina
     - Return false if none of the conditions are met.
 - **Output**: Returns a boolean indicating whether the string was successfully processed as a quoted or binary-escaped string.
 - **Functions called**:
-    - [`CLI::detail::handle_secondary_array`](#detailhandle_secondary_array)
+    - [`CLI::detail::handle_secondary_array`](#handle_secondary_array)
 
 
 ---

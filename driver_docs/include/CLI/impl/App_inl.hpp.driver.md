@@ -761,11 +761,11 @@ The `check_name` function verifies if a given name matches the application's nam
 - **Inputs**:
     - `name_to_check`: A `std::string` representing the name to be checked against the application's name and aliases.
 - **Control Flow**:
-    - The function calls [`check_name_detail`](#NameMatchcheck_name_detail) with the `name_to_check` after moving it to avoid unnecessary copies.
-    - The result of [`check_name_detail`](#NameMatchcheck_name_detail) is compared to `NameMatch::none` to determine if there was a match.
+    - The function calls [`check_name_detail`](#NameMatchcheck_name_) with the `name_to_check` after moving it to avoid unnecessary copies.
+    - The result of [`check_name_detail`](#NameMatchcheck_name_) is compared to `NameMatch::none` to determine if there was a match.
 - **Output**: Returns a boolean value indicating whether the `name_to_check` matches the application's name or any of its aliases.
 - **Functions called**:
-    - [`CLI::CLI11_INLINE::NameMatch::check_name_detail`](#NameMatchcheck_name_detail)
+    - [`CLI::CLI11_INLINE::NameMatch::check_name_detail`](#NameMatchcheck_name_)
 
 
 ---
@@ -903,7 +903,7 @@ The `_recognize` function classifies a given command string into various categor
     - `ignore_used_subcommands`: A `bool` indicating whether to ignore subcommands that have already been used.
 - **Control Flow**:
     - Checks if the `current` string is a positional marker ('--') and returns `POSITIONAL_MARK` if true.
-    - Validates if `current` is a valid subcommand using [`_valid_subcommand`](#CLI11_INLINE_valid_subcommand) and returns `SUBCOMMAND` if true.
+    - Validates if `current` is a valid subcommand using [`_valid_subcommand`](#11_INLINE_valid_subcommand) and returns `SUBCOMMAND` if true.
     - Attempts to split `current` as a long option using `detail::split_long` and returns `LONG` if successful.
     - Attempts to split `current` as a short option using `detail::split_short` and checks if it resembles a number or option.
     - If `allow_windows_style_options_` is true, checks if `current` is a Windows-style option and returns `WINDOWS_STYLE` if true.
@@ -912,7 +912,7 @@ The `_recognize` function classifies a given command string into various categor
     - If none of the conditions are met, returns `NONE`.
 - **Output**: Returns a value from the `detail::Classifier` enumeration indicating the classification of the `current` command.
 - **Functions called**:
-    - [`CLI::CLI11_INLINE::_valid_subcommand`](#CLI11_INLINE_valid_subcommand)
+    - [`CLI::CLI11_INLINE::_valid_subcommand`](#11_INLINE_valid_subcommand)
     - [`CLI::App::get_option_no_throw`](#Appget_option_no_throw)
     - [`CLI::App::_find_subcommand`](#App_find_subcommand)
 
@@ -1168,7 +1168,7 @@ The `_parse_single` function processes a single argument from a command line inp
 - **Output**: The function returns a boolean indicating whether the parsing was successful or not.
 - **Functions called**:
     - [`CLI::CLI11_INLINE::Classifier::_recognize`](#Classifier_recognize)
-    - [`CLI::CLI11_INLINE::_has_remaining_positionals`](#CLI11_INLINE_has_remaining_positionals)
+    - [`CLI::CLI11_INLINE::_has_remaining_positionals`](#11_INLINE_has_remaining_positionals)
     - [`CLI::void::_move_to_missing`](#void_move_to_missing)
     - [`CLI::bool::_parse_subcommand`](#bool_parse_subcommand)
     - [`CLI::bool::_parse_arg`](#bool_parse_arg)
@@ -1352,17 +1352,17 @@ The `deprecate_option` function marks an `Option` as deprecated and suggests a r
 
 ---
 ### retire\_option<!-- {{#callable:CLI::retire_option}} -->
-The [`retire_option`](#CLIretire_option) function marks an option as retired in the given application.
+The [`retire_option`](#retire_option) function marks an option as retired in the given application.
 - **Inputs**:
     - `app`: A reference to an `App` object representing the application in which the option is being retired.
     - `option_name`: A string representing the name of the option to be retired.
 - **Control Flow**:
     - The function first retrieves the option associated with the provided `option_name` from the `app` using `get_option_no_throw`.
-    - If the option exists, it calls the overloaded [`retire_option`](#CLIretire_option) function to handle the retirement process.
+    - If the option exists, it calls the overloaded [`retire_option`](#retire_option) function to handle the retirement process.
     - If the option does not exist, it creates a new option with the same name, indicating that it has been retired and has no effect.
 - **Output**: The function does not return a value; it modifies the state of the application by retiring the specified option.
 - **Functions called**:
-    - [`CLI::retire_option`](#CLIretire_option)
+    - [`CLI::retire_option`](#retire_option)
 
 
 ---

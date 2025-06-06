@@ -45,7 +45,7 @@ The `convert_arg_for_ini` function processes a string argument to prepare it for
     - Finally, return the argument quoted with `stringQuote` if none of the above conditions are met.
 - **Output**: A string that is the processed version of the input argument, ready for inclusion in an INI file.
 - **Functions called**:
-    - [`CLI::detail::is_printable`](#detailis_printable)
+    - [`CLI::detail::is_printable`](#is_printable)
 
 
 ---
@@ -195,6 +195,6 @@ The `to_config` function generates a configuration string for a given applicatio
     - Return the configuration string, optionally prepending the application's description as a comment.
 - **Output**: A string representing the configuration of the application, including options and subcommands, formatted with optional descriptions and default values.
 - **Functions called**:
-    - [`CLI::clean_name_string`](#CLIclean_name_string)
+    - [`CLI::clean_name_string`](#clean_name_string)
 
 

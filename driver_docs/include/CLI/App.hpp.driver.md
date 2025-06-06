@@ -684,7 +684,7 @@ Adds a flag to the command line interface that modifies a variable based on user
     - Finally, it applies default modifiers to the created option using `detail::default_flag_modifiers`.
 - **Output**: Returns a pointer to the `Option` object representing the added flag.
 - **Functions called**:
-    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#detaillexical_cast)
+    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#lexical_cast)
     - [`CLI::App::_add_flag_internal`](impl/App_inl.hpp.driver.md#App_add_flag_internal)
 - **See also**: [`CLI::App`](#App)  (Data Structure)
 
@@ -703,7 +703,7 @@ The `add_flag` function adds a command-line flag that can capture multiple resul
     - It sets the multi-option policy to 'TakeAll' to allow capturing multiple values and runs the default callback.
 - **Output**: Returns a pointer to an `Option` object representing the added flag.
 - **Functions called**:
-    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#detaillexical_cast)
+    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#lexical_cast)
     - [`CLI::App::_add_flag_internal`](impl/App_inl.hpp.driver.md#App_add_flag_internal)
 - **See also**: [`CLI::App`](#App)  (Data Structure)
 
@@ -953,7 +953,7 @@ The `add_option` function adds an existing `Option` to the `Option_group` by mov
     - Return the `Option` pointer `opt`.
 - **Output**: Returns the pointer to the `Option` that was added to the `Option_group`.
 - **Functions called**:
-    - [`CLI::get_parent`](#CLIget_parent)
+    - [`CLI::get_parent`](#get_parent)
     - [`HorribleError::OptionNotFound`](Error.hpp.driver.md#OptionNotFound)
 - **See also**: [`Option_group`](#Option_group)  (Data Structure)
 
@@ -1118,13 +1118,13 @@ The `get_subcommand` method retrieves a subcommand by its name from the current 
     - [`CLI::App::set_help_flag`](impl/App_inl.hpp.driver.md#Appset_help_flag)
     - [`CLI::App::add_option`](#Appadd_option)
     - [`CLI::App::_add_flag_internal`](impl/App_inl.hpp.driver.md#App_add_flag_internal)
-    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#detaillexical_cast)
+    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#lexical_cast)
     - [`CLI::App::add_flag_function`](impl/App_inl.hpp.driver.md#Appadd_flag_function)
     - [`IncorrectConstruction`](Error.hpp.driver.md#IncorrectConstruction)
     - [`Option_group::add_subcommand`](#Option_groupadd_subcommand)
     - [`CLI::CLI11_INLINE::App_p::get_subcommand_ptr`](impl/App_inl.hpp.driver.md#App_pget_subcommand_ptr)
     - [`CLI::CLI11_INLINE::size_t::count_all`](impl/App_inl.hpp.driver.md#size_tcount_all)
-    - [`CLI::get_option`](#CLIget_option)
+    - [`CLI::get_option`](#get_option)
 
 
 ---
@@ -1281,11 +1281,11 @@ The `operator[]` function provides a convenient way to access an `Option` object
 - **Inputs**:
     - `option_name`: A pointer to a C-style string (const char*) representing the name of the option to retrieve.
 - **Control Flow**:
-    - The function calls [`get_option`](#CLIget_option) with the provided `option_name`.
-    - The result of [`get_option`](#CLIget_option) is returned directly.
+    - The function calls [`get_option`](#get_option) with the provided `option_name`.
+    - The result of [`get_option`](#get_option) is returned directly.
 - **Output**: Returns a pointer to the `Option` object associated with the specified name, or nullptr if the option does not exist.
 - **Functions called**:
-    - [`CLI::get_option`](#CLIget_option)
+    - [`CLI::get_option`](#get_option)
 
 
 ---
@@ -1654,10 +1654,10 @@ Marks a specified option in an `App` as deprecated.
     - `replacement`: An optional string that specifies a replacement option for the deprecated one.
 - **Control Flow**:
     - The function retrieves the option associated with the given `option_name` from the `app` using the `get_option` method.
-    - It then calls the overloaded [`deprecate_option`](impl/App_inl.hpp.driver.md#CLIdeprecate_option) function, passing the retrieved option and the optional replacement string.
+    - It then calls the overloaded [`deprecate_option`](impl/App_inl.hpp.driver.md#deprecate_option) function, passing the retrieved option and the optional replacement string.
 - **Output**: This function does not return a value; it modifies the state of the specified option to indicate that it is deprecated.
 - **Functions called**:
-    - [`CLI::deprecate_option`](impl/App_inl.hpp.driver.md#CLIdeprecate_option)
+    - [`CLI::deprecate_option`](impl/App_inl.hpp.driver.md#deprecate_option)
 
 
 ---
