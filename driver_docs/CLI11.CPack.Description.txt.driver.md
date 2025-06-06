@@ -1,0 +1,2 @@
+# Purpose
+The provided text is a description of CLI11, a C++ library for parsing command line arguments. It highlights the library's features, such as its minimal syntax, lack of dependencies beyond C++11, and its single-file header-only design, making it easy to integrate into projects. The description emphasizes CLI11's versatility, being suitable for both small and complex command line projects, with customization options for different frameworks.

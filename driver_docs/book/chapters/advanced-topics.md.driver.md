@@ -1,0 +1,16 @@
+# Purpose
+The provided content is a documentation excerpt for configuring and extending the CLI11 library, a C++ library used for creating command-line interfaces. This file serves a narrow purpose, focusing on advanced customization and configuration options available within the library. It covers several conceptual components, including the use of environment variables to set command-line options, establishing dependencies and exclusions between command-line flags, and creating custom option callbacks for handling complex data types. Additionally, it explains how to implement custom converters to extend the library's capability to handle various data types, such as `boost::optional` and `std::chrono` durations. This documentation is crucial for developers who need to tailor the CLI11 library to fit specific application requirements, ensuring that command-line interfaces are both flexible and robust.
+# Content Summary
+This document provides advanced configuration techniques for the CLI11 library, a C++ command line interface parser. It covers several key topics that enhance the flexibility and functionality of command line applications.
+
+1. **Environment Variables**: The document explains how environment variables can be used to set the value of command line options. By specifying an environment variable name using the `envname` method, the application will check the environment variable if the option is not provided on the command line. This feature integrates seamlessly with other option attributes like default values and required flags.
+
+2. **Needs/Excludes Relationships**: CLI11 allows developers to define dependencies and exclusions between command line flags. For instance, a flag can be set to require another flag or to be mutually exclusive with another. This is achieved using the `needs` and `excludes` methods, ensuring logical consistency in command line arguments.
+
+3. **Custom Option Callbacks**: Developers can create custom options with specific behaviors by defining callbacks. The document provides an example of adding a complex number option using a custom callback function. This involves setting a custom option with a specific number of expected arguments and optionally defining a default value.
+
+4. **Custom Converters**: CLI11 supports the addition of custom converters to handle non-standard option types. By overloading the `operator>>` in the CLI namespace, developers can extend the library to parse additional types, such as `boost::optional`. This customization is encapsulated within the CLI namespace to prevent interference with other parts of the codebase.
+
+5. **Custom Converters and Type Names for `std::chrono`**: The document includes an example of adding custom converters and type names for `std::chrono` durations. This involves overloading both `operator>>` and `operator<<` to handle input and output conversions, as well as defining type names for specific duration types like `std::chrono::hours` and `std::chrono::minutes`.
+
+Overall, these advanced features of CLI11 provide developers with powerful tools to create robust and flexible command line applications, allowing for sophisticated argument parsing and validation.
