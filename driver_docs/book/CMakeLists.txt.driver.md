@@ -1,0 +1,2 @@
+# Purpose
+The file is a CMake configuration script that defines a custom build target named `cli_book`. It specifies `README.md` and `SUMMARY.md` as source files and uses the `file(GLOB ...)` command to include all Markdown files located in the `chapters` directory relative to the current source directory. This setup is used to manage and build documentation or a book-like structure from these Markdown files.
