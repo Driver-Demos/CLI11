@@ -427,7 +427,7 @@ The `delimiter` function sets a character to be used as a delimiter for splittin
 - **Member Functions**:
     - [`CLI::empty::Option::Option`](#OptionOption)
     - [`CLI::empty::Option::Option`](#OptionOption)
-    - [`CLI::empty::Option::operator=`](#Optionoperator=)
+    - [`CLI::empty::Option::operator=`](#Optionoperator)
 - **Inherits From**:
     - [`CLI::OptionBase`](#OptionBase)
 

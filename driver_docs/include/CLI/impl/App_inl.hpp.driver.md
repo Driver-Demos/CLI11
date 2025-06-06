@@ -24,7 +24,7 @@ The file includes several inline functions that implement the behavior of the `A
 - **Member Functions**:
     - [`CLI::App::App`](../App.hpp.driver.md#AppApp)
     - [`CLI::App::App`](../App.hpp.driver.md#AppApp)
-    - [`CLI::App::operator=`](../App.hpp.driver.md#Appoperator=)
+    - [`CLI::App::operator=`](../App.hpp.driver.md#Appoperator)
     - [`CLI::App::~App`](../App.hpp.driver.md#AppApp)
     - [`CLI::App::callback`](../App.hpp.driver.md#Appcallback)
     - [`CLI::App::final_callback`](../App.hpp.driver.md#Appfinal_callback)

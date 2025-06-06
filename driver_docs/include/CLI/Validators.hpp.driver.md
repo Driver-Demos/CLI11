@@ -109,11 +109,11 @@ The file also introduces more specialized validators like [`Transformer`](#Trans
     - [`CLI::Validator::Validator`](#ValidatorValidator)
     - [`CLI::Validator::Validator`](#ValidatorValidator)
     - [`CLI::Validator::operation`](#Validatoroperation)
-    - [`CLI::Validator::operator()`](#Validatoroperator())
+    - [`CLI::Validator::operator()`](#Validatoroperator))
     - [`CLI::Validator::description`](#Validatordescription)
-    - [`CLI::Validator::operator&`](impl/Validators_inl.hpp.driver.md#Validatoroperator&)
-    - [`CLI::Validator::operator|`](impl/Validators_inl.hpp.driver.md#Validatoroperator|)
-    - [`CLI::Validator::operator!`](impl/Validators_inl.hpp.driver.md#Validatoroperator!)
+    - [`CLI::Validator::operator&`](impl/Validators_inl.hpp.driver.md#Validatoroperator)
+    - [`CLI::Validator::operator|`](impl/Validators_inl.hpp.driver.md#Validatoroperator)
+    - [`CLI::Validator::operator!`](impl/Validators_inl.hpp.driver.md#Validatoroperator)
     - [`CLI::Validator::_merge_description`](impl/Validators_inl.hpp.driver.md#Validator_merge_description)
 
 **Methods**
