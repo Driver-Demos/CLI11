@@ -134,7 +134,7 @@ The `get_allow_config_extras` function returns the current mode for handling ext
 - **Member Functions**:
     - [`CLI::App::App`](#AppApp)
     - [`CLI::App::App`](#AppApp)
-    - [`CLI::App::operator=`](#Appoperator=)
+    - [`CLI::App::operator=`](#Appoperator)
     - [`CLI::App::~App`](#AppApp)
     - [`CLI::App::callback`](#Appcallback)
     - [`CLI::App::final_callback`](#Appfinal_callback)

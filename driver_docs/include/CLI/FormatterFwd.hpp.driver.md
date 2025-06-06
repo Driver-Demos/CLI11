@@ -41,8 +41,8 @@ The file is structured to provide a flexible and extensible framework for genera
     - [`CLI::FormatterBase::FormatterBase`](#FormatterBaseFormatterBase)
     - [`CLI::FormatterBase::FormatterBase`](#FormatterBaseFormatterBase)
     - [`CLI::FormatterBase::FormatterBase`](#FormatterBaseFormatterBase)
-    - [`CLI::FormatterBase::operator=`](#FormatterBaseoperator=)
-    - [`CLI::FormatterBase::operator=`](#FormatterBaseoperator=)
+    - [`CLI::FormatterBase::operator=`](#FormatterBaseoperator)
+    - [`CLI::FormatterBase::operator=`](#FormatterBaseoperator)
     - [`CLI::FormatterBase::~FormatterBase`](#FormatterBaseFormatterBase)
     - [`CLI::FormatterBase::label`](#FormatterBaselabel)
     - [`CLI::FormatterBase::column_width`](#FormatterBasecolumn_width)
@@ -280,8 +280,8 @@ The `make_help` function calls a stored lambda function to generate help text fo
     - [`Formatter::Formatter`](#FormatterFormatter)
     - [`Formatter::Formatter`](#FormatterFormatter)
     - [`Formatter::Formatter`](#FormatterFormatter)
-    - [`Formatter::operator=`](#Formatteroperator=)
-    - [`Formatter::operator=`](#Formatteroperator=)
+    - [`Formatter::operator=`](#Formatteroperator)
+    - [`Formatter::operator=`](#Formatteroperator)
 - **Inherits From**:
     - [`CLI::FormatterBase::FormatterBase`](#FormatterBaseFormatterBase)
 

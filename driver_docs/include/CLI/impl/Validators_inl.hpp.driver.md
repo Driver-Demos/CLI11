@@ -1,5 +1,5 @@
 # Purpose
-This C++ source code file is part of a library designed to provide validation functionality, specifically for command-line interface (CLI) applications. The file defines a set of validators within the `CLI` namespace, which are used to ensure that input data meets certain criteria. The primary class, `Validator`, is equipped with several operator overloads ([`operator()`](#stringoperator()), [`operator&`](#Validatoroperator&), [`operator|`](#Validatoroperator|), and [`operator!`](#Validatoroperator!)) to facilitate the combination and logical manipulation of validation rules. These validators can be used to check the existence of files and directories, validate IPv4 addresses, and transform escaped strings, among other tasks. The file also includes utility functions for path checking, which are conditionally compiled based on the availability of the C++17 filesystem library.
+This C++ source code file is part of a library designed to provide validation functionality, specifically for command-line interface (CLI) applications. The file defines a set of validators within the `CLI` namespace, which are used to ensure that input data meets certain criteria. The primary class, `Validator`, is equipped with several operator overloads ([`operator()`](#stringoperator)), [`operator&`](#Validatoroperator), [`operator|`](#Validatoroperator), and [`operator!`](#Validatoroperator)) to facilitate the combination and logical manipulation of validation rules. These validators can be used to check the existence of files and directories, validate IPv4 addresses, and transform escaped strings, among other tasks. The file also includes utility functions for path checking, which are conditionally compiled based on the availability of the C++17 filesystem library.
 
 The code is structured to be part of a larger library, likely intended for inclusion in other projects via header files. It provides a public API for creating and using validators, which can be extended or customized as needed. The validators are implemented as inline functions, suggesting a focus on performance and ease of integration. The file also includes mechanisms for handling different operating systems and compiler environments, ensuring broad compatibility. Overall, this file is a specialized component of a CLI library, offering robust validation capabilities for command-line applications.
 # Imports and Dependencies
@@ -35,11 +35,11 @@ The code is structured to be part of a larger library, likely intended for inclu
     - [`CLI::Validator::Validator`](../Validators.hpp.driver.md#ValidatorValidator)
     - [`CLI::Validator::Validator`](../Validators.hpp.driver.md#ValidatorValidator)
     - [`CLI::Validator::operation`](../Validators.hpp.driver.md#Validatoroperation)
-    - [`CLI::Validator::operator()`](../Validators.hpp.driver.md#Validatoroperator())
+    - [`CLI::Validator::operator()`](../Validators.hpp.driver.md#Validatoroperator))
     - [`CLI::Validator::description`](../Validators.hpp.driver.md#Validatordescription)
-    - [`CLI::Validator::operator&`](#Validatoroperator&)
-    - [`CLI::Validator::operator|`](#Validatoroperator|)
-    - [`CLI::Validator::operator!`](#Validatoroperator!)
+    - [`CLI::Validator::operator&`](#Validatoroperator)
+    - [`CLI::Validator::operator|`](#Validatoroperator)
+    - [`CLI::Validator::operator!`](#Validatoroperator)
     - [`CLI::Validator::_merge_description`](#Validator_merge_description)
 
 **Methods**

@@ -168,8 +168,8 @@ The `yetanotherstring` constructor initializes an instance of the `yetanotherstr
     - [`objWrapper::objWrapper`](#objWrapperobjWrapper)
     - [`objWrapper::objWrapper`](#objWrapperobjWrapper)
     - [`objWrapper::objWrapper`](#objWrapperobjWrapper)
-    - [`objWrapper::operator=`](#objWrapperoperator=)
-    - [`objWrapper::operator=`](#objWrapperoperator=)
+    - [`objWrapper::operator=`](#objWrapperoperator)
+    - [`objWrapper::operator=`](#objWrapperoperator)
     - [`objWrapper::value`](#objWrappervalue)
 
 **Methods**
@@ -281,9 +281,9 @@ The `value` method returns a constant reference to the private member `val_` of 
     - [`objWrapperRestricted::objWrapperRestricted`](#objWrapperRestrictedobjWrapperRestricted)
     - [`objWrapperRestricted::objWrapperRestricted`](#objWrapperRestrictedobjWrapperRestricted)
     - [`objWrapperRestricted::objWrapperRestricted`](#objWrapperRestrictedobjWrapperRestricted)
-    - [`objWrapperRestricted::operator=`](#objWrapperRestrictedoperator=)
-    - [`objWrapperRestricted::operator=`](#objWrapperRestrictedoperator=)
-    - [`objWrapperRestricted::operator=`](#objWrapperRestrictedoperator=)
+    - [`objWrapperRestricted::operator=`](#objWrapperRestrictedoperator)
+    - [`objWrapperRestricted::operator=`](#objWrapperRestrictedoperator)
+    - [`objWrapperRestricted::operator=`](#objWrapperRestrictedoperator)
     - [`objWrapperRestricted::value`](#objWrapperRestrictedvalue)
 
 **Methods**
@@ -483,7 +483,7 @@ The `ivalue` function returns the integer value stored in the `ival_` member of 
 - **Member Functions**:
     - [`AobjWrapper::AobjWrapper`](#AobjWrapperAobjWrapper)
     - [`AobjWrapper::AobjWrapper`](#AobjWrapperAobjWrapper)
-    - [`AobjWrapper::operator=`](#AobjWrapperoperator=)
+    - [`AobjWrapper::operator=`](#AobjWrapperoperator)
     - [`AobjWrapper::value`](#AobjWrappervalue)
 
 **Methods**
