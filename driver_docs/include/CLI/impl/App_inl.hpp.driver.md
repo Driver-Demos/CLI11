@@ -20,11 +20,11 @@ The file includes several inline functions that implement the behavior of the `A
 
 ---
 ### App<!-- {{#data_structure:CLI::App}} -->
-- **Description**: [See definition](../App.hpp.driver.md#App)
+- **Description**: [See definition](../App.hpp.driver.md#CLIApp)
 - **Member Functions**:
     - [`CLI::App::App`](../App.hpp.driver.md#AppApp)
     - [`CLI::App::App`](../App.hpp.driver.md#AppApp)
-    - [`CLI::App::operator=`](../App.hpp.driver.md#Appoperator)
+    - [`CLI::App::operator=`](../App.hpp.driver.md#Appoperator=)
     - [`CLI::App::~App`](../App.hpp.driver.md#AppApp)
     - [`CLI::App::callback`](../App.hpp.driver.md#Appcallback)
     - [`CLI::App::final_callback`](../App.hpp.driver.md#Appfinal_callback)
@@ -117,7 +117,7 @@ The `ensure_utf8` function converts command-line arguments to UTF-8 encoding on 
     - Return the data pointer of `normalized_argv_view_`.
     - If not on Windows, simply return the input `argv`.
 - **Output**: A pointer to an array of C-style strings, either the original `argv` or a UTF-8 normalized version on Windows.
-- **See also**: [`CLI::App`](../App.hpp.driver.md#App)  (Data Structure)
+- **See also**: [`CLI::App`](../App.hpp.driver.md#CLIApp)  (Data Structure)
 
 
 ---
@@ -137,7 +137,7 @@ The `name` function sets the name of the application or subcommand, ensuring it 
 - **Functions called**:
     - [`CLI::App::_compare_subcommand_names`](#App_compare_subcommand_names)
     - [`CLI::App::_get_fallthrough_parent`](#App_get_fallthrough_parent)
-- **See also**: [`CLI::App`](../App.hpp.driver.md#App)  (Data Structure)
+- **See also**: [`CLI::App`](../App.hpp.driver.md#CLIApp)  (Data Structure)
 
 
 ---
@@ -154,7 +154,7 @@ The `alias` method adds an alias name to the current `App` object, ensuring it d
 - **Functions called**:
     - [`CLI::App::_compare_subcommand_names`](#App_compare_subcommand_names)
     - [`CLI::App::_get_fallthrough_parent`](#App_get_fallthrough_parent)
-- **See also**: [`CLI::App`](../App.hpp.driver.md#App)  (Data Structure)
+- **See also**: [`CLI::App`](../App.hpp.driver.md#CLIApp)  (Data Structure)
 
 
 ---
@@ -168,7 +168,7 @@ The `immediate_callback` function sets the `immediate_callback_` flag and swaps 
     - If `immediate_callback_` is false, check if `final_callback_` is not set and `parse_complete_callback_` is set, then swap them.
     - Return the current instance of the `App` class.
 - **Output**: Returns a pointer to the current `App` instance (`this`).
-- **See also**: [`CLI::App`](../App.hpp.driver.md#App)  (Data Structure)
+- **See also**: [`CLI::App`](../App.hpp.driver.md#CLIApp)  (Data Structure)
 
 
 ---
@@ -186,7 +186,7 @@ The `ignore_case` method in the `App` class sets the case sensitivity for subcom
 - **Functions called**:
     - [`CLI::App::_get_fallthrough_parent`](#App_get_fallthrough_parent)
     - [`CLI::App::_compare_subcommand_names`](#App_compare_subcommand_names)
-- **See also**: [`CLI::App`](../App.hpp.driver.md#App)  (Data Structure)
+- **See also**: [`CLI::App`](../App.hpp.driver.md#CLIApp)  (Data Structure)
 
 
 ---
@@ -204,7 +204,7 @@ The `ignore_underscore` function sets the `ignore_underscore_` flag for an `App`
 - **Functions called**:
     - [`CLI::App::_get_fallthrough_parent`](#App_get_fallthrough_parent)
     - [`CLI::App::_compare_subcommand_names`](#App_compare_subcommand_names)
-- **See also**: [`CLI::App`](../App.hpp.driver.md#App)  (Data Structure)
+- **See also**: [`CLI::App`](../App.hpp.driver.md#CLIApp)  (Data Structure)
 
 
 ---
@@ -228,7 +228,7 @@ The `add_option` function adds a new option to the `App` class, ensuring it does
 - **Output**: A pointer to the newly added `Option` object, or throws an exception if the option cannot be added due to conflicts.
 - **Functions called**:
     - [`CLI::App::get_option_no_throw`](#Appget_option_no_throw)
-- **See also**: [`CLI::App`](../App.hpp.driver.md#App)  (Data Structure)
+- **See also**: [`CLI::App`](../App.hpp.driver.md#CLIApp)  (Data Structure)
 
 
 ---
@@ -244,7 +244,7 @@ The `set_help_flag` function sets or removes a help flag for the application, re
 - **Output**: Returns a pointer to the newly set help flag (`Option *`), or null if the help flag was removed.
 - **Functions called**:
     - [`CLI::bool::remove_option`](#boolremove_option)
-- **See also**: [`CLI::App`](../App.hpp.driver.md#App)  (Data Structure)
+- **See also**: [`CLI::App`](../App.hpp.driver.md#CLIApp)  (Data Structure)
 
 
 ---
@@ -261,7 +261,7 @@ The `set_help_all_flag` function sets or removes a 'help all' flag for the appli
 - **Output**: Returns a pointer to the `Option` object representing the 'help all' flag, or null if the flag is removed.
 - **Functions called**:
     - [`CLI::bool::remove_option`](#boolremove_option)
-- **See also**: [`CLI::App`](../App.hpp.driver.md#App)  (Data Structure)
+- **See also**: [`CLI::App`](../App.hpp.driver.md#CLIApp)  (Data Structure)
 
 
 ---
@@ -280,7 +280,7 @@ The `set_version_flag` function sets or removes a version flag for the applicati
 - **Functions called**:
     - [`CLI::bool::remove_option`](#boolremove_option)
     - [`CLI::App::add_flag_callback`](#Appadd_flag_callback)
-- **See also**: [`CLI::App`](../App.hpp.driver.md#App)  (Data Structure)
+- **See also**: [`CLI::App`](../App.hpp.driver.md#CLIApp)  (Data Structure)
 
 
 ---
@@ -304,7 +304,7 @@ The `_add_flag_internal` function adds a flag option to the application, handlin
 - **Functions called**:
     - [`CLI::App::add_option`](#Appadd_option)
     - [`CLI::bool::remove_option`](#boolremove_option)
-- **See also**: [`CLI::App`](../App.hpp.driver.md#App)  (Data Structure)
+- **See also**: [`CLI::App`](../App.hpp.driver.md#CLIApp)  (Data Structure)
 
 
 ---
@@ -323,7 +323,7 @@ The `add_flag_callback` function adds a flag to the application that triggers a 
 - **Output**: Returns a pointer to an `Option` object representing the added flag.
 - **Functions called**:
     - [`CLI::App::_add_flag_internal`](#App_add_flag_internal)
-- **See also**: [`CLI::App`](../App.hpp.driver.md#App)  (Data Structure)
+- **See also**: [`CLI::App`](../App.hpp.driver.md#CLIApp)  (Data Structure)
 
 
 ---
@@ -343,7 +343,7 @@ The `add_flag_function` method adds a flag to the application that triggers a sp
 - **Output**: Returns a pointer to an `Option` object representing the added flag.
 - **Functions called**:
     - [`CLI::App::_add_flag_internal`](#App_add_flag_internal)
-- **See also**: [`CLI::App`](../App.hpp.driver.md#App)  (Data Structure)
+- **See also**: [`CLI::App`](../App.hpp.driver.md#CLIApp)  (Data Structure)
 
 
 ---
@@ -365,7 +365,7 @@ The `set_config` function configures a command-line option for reading a configu
 - **Functions called**:
     - [`CLI::bool::remove_option`](#boolremove_option)
     - [`CLI::App::add_option`](#Appadd_option)
-- **See also**: [`CLI::App`](../App.hpp.driver.md#App)  (Data Structure)
+- **See also**: [`CLI::App`](../App.hpp.driver.md#CLIApp)  (Data Structure)
 
 
 ---
@@ -383,7 +383,7 @@ The [`add_subcommand`](#Appadd_subcommand) function adds a new subcommand to the
 - **Output**: Returns a pointer to the newly added subcommand `App` instance.
 - **Functions called**:
     - [`CLI::App::add_subcommand`](#Appadd_subcommand)
-- **See also**: [`CLI::App`](../App.hpp.driver.md#App)  (Data Structure)
+- **See also**: [`CLI::App`](../App.hpp.driver.md#CLIApp)  (Data Structure)
 
 
 ---
@@ -398,7 +398,7 @@ The `get_subcommand` function retrieves a subcommand from the list of subcommand
     - If a match is found, return the matching subcommand pointer.
     - If no match is found after iterating through all subcommands, throw an `OptionNotFound` exception with the name of the subcommand.
 - **Output**: Returns a pointer to the `App` object that matches the input subcommand pointer, or throws an `OptionNotFound` exception if no match is found.
-- **See also**: [`CLI::App`](../App.hpp.driver.md#App)  (Data Structure)
+- **See also**: [`CLI::App`](../App.hpp.driver.md#CLIApp)  (Data Structure)
 
 
 ---
@@ -413,7 +413,7 @@ The `get_subcommand_no_throw` function retrieves a subcommand by name from the `
 - **Output**: Returns a pointer to the `App` object representing the subcommand if found, or `nullptr` if not found.
 - **Functions called**:
     - [`CLI::App::_find_subcommand`](#App_find_subcommand)
-- **See also**: [`CLI::App`](../App.hpp.driver.md#App)  (Data Structure)
+- **See also**: [`CLI::App`](../App.hpp.driver.md#CLIApp)  (Data Structure)
 
 
 ---
@@ -427,7 +427,7 @@ The `get_option_group` function retrieves a subcommand from the `subcommands_` v
     - If a matching subcommand is found, return a pointer to it.
     - If no matching subcommand is found after the loop, throw an `OptionNotFound` exception with the `group_name`.
 - **Output**: A pointer to the `App` object representing the subcommand that matches the specified group name.
-- **See also**: [`CLI::App`](../App.hpp.driver.md#App)  (Data Structure)
+- **See also**: [`CLI::App`](../App.hpp.driver.md#CLIApp)  (Data Structure)
 
 
 ---
@@ -446,7 +446,7 @@ The `exit` function handles different types of errors by printing appropriate me
 - **Output**: The function returns an integer representing the exit code associated with the error.
 - **Functions called**:
     - [`CLI::CLI11_INLINE::string::help`](#stringhelp)
-- **See also**: [`CLI::App`](../App.hpp.driver.md#App)  (Data Structure)
+- **See also**: [`CLI::App`](../App.hpp.driver.md#CLIApp)  (Data Structure)
 
 
 ---
@@ -464,7 +464,7 @@ The `get_option_no_throw` function attempts to find an option by name within the
     - If a match is found in a subcommand, return the pointer to the option.
     - If no match is found in any subcommand, return `nullptr`.
 - **Output**: A pointer to the `Option` object if found, otherwise `nullptr`.
-- **See also**: [`CLI::App`](../App.hpp.driver.md#App)  (Data Structure)
+- **See also**: [`CLI::App`](../App.hpp.driver.md#CLIApp)  (Data Structure)
 
 
 ---
@@ -485,7 +485,7 @@ The `_find_subcommand` function searches for a subcommand within the `App` class
     - If a match is found and the subcommand is not used or `ignore_used` is false, return the subcommand if the match is exact or set `bcom` if it's a prefix match.
     - Return `bcom`, which is either the best match found or `nullptr` if no suitable subcommand was found.
 - **Output**: Returns a pointer to the `App` object representing the matching subcommand, or `nullptr` if no match is found or if there is ambiguity.
-- **See also**: [`CLI::App`](../App.hpp.driver.md#App)  (Data Structure)
+- **See also**: [`CLI::App`](../App.hpp.driver.md#CLIApp)  (Data Structure)
 
 
 ---
@@ -499,7 +499,7 @@ The function `_get_fallthrough_parent` retrieves the nearest valid parent `App` 
     - In each iteration, update `fallthrough_parent` to its own parent.
     - Return `fallthrough_parent`.
 - **Output**: Returns a pointer to the nearest valid parent `App` object with a non-empty name.
-- **See also**: [`CLI::App`](../App.hpp.driver.md#App)  (Data Structure)
+- **See also**: [`CLI::App`](../App.hpp.driver.md#CLIApp)  (Data Structure)
 
 
 ---
@@ -519,7 +519,7 @@ The function `_compare_subcommand_names` checks for name conflicts between a giv
     - If `subcom` is an option group (name is empty), recursively call `_compare_subcommand_names` to check deeper.
     - Return `estring` if no conflicts are found.
 - **Output**: A reference to a `std::string` containing the conflicting subcommand name or an empty string if no conflict is found.
-- **See also**: [`CLI::App`](../App.hpp.driver.md#App)  (Data Structure)
+- **See also**: [`CLI::App`](../App.hpp.driver.md#CLIApp)  (Data Structure)
 
 
 
@@ -761,11 +761,11 @@ The `check_name` function verifies if a given name matches the application's nam
 - **Inputs**:
     - `name_to_check`: A `std::string` representing the name to be checked against the application's name and aliases.
 - **Control Flow**:
-    - The function calls [`check_name_detail`](#NameMatchcheck_name_) with the `name_to_check` after moving it to avoid unnecessary copies.
-    - The result of [`check_name_detail`](#NameMatchcheck_name_) is compared to `NameMatch::none` to determine if there was a match.
+    - The function calls [`check_name_detail`](#NameMatchcheck_name_detail) with the `name_to_check` after moving it to avoid unnecessary copies.
+    - The result of [`check_name_detail`](#NameMatchcheck_name_detail) is compared to `NameMatch::none` to determine if there was a match.
 - **Output**: Returns a boolean value indicating whether the `name_to_check` matches the application's name or any of its aliases.
 - **Functions called**:
-    - [`CLI::CLI11_INLINE::NameMatch::check_name_detail`](#NameMatchcheck_name_)
+    - [`CLI::CLI11_INLINE::NameMatch::check_name_detail`](#NameMatchcheck_name_detail)
 
 
 ---
@@ -903,7 +903,7 @@ The `_recognize` function classifies a given command string into various categor
     - `ignore_used_subcommands`: A `bool` indicating whether to ignore subcommands that have already been used.
 - **Control Flow**:
     - Checks if the `current` string is a positional marker ('--') and returns `POSITIONAL_MARK` if true.
-    - Validates if `current` is a valid subcommand using [`_valid_subcommand`](#11_INLINE_valid_subcommand) and returns `SUBCOMMAND` if true.
+    - Validates if `current` is a valid subcommand using [`_valid_subcommand`](#CLI11_INLINE_valid_subcommand) and returns `SUBCOMMAND` if true.
     - Attempts to split `current` as a long option using `detail::split_long` and returns `LONG` if successful.
     - Attempts to split `current` as a short option using `detail::split_short` and checks if it resembles a number or option.
     - If `allow_windows_style_options_` is true, checks if `current` is a Windows-style option and returns `WINDOWS_STYLE` if true.
@@ -912,7 +912,7 @@ The `_recognize` function classifies a given command string into various categor
     - If none of the conditions are met, returns `NONE`.
 - **Output**: Returns a value from the `detail::Classifier` enumeration indicating the classification of the `current` command.
 - **Functions called**:
-    - [`CLI::CLI11_INLINE::_valid_subcommand`](#11_INLINE_valid_subcommand)
+    - [`CLI::CLI11_INLINE::_valid_subcommand`](#CLI11_INLINE_valid_subcommand)
     - [`CLI::App::get_option_no_throw`](#Appget_option_no_throw)
     - [`CLI::App::_find_subcommand`](#App_find_subcommand)
 
@@ -1168,7 +1168,7 @@ The `_parse_single` function processes a single argument from a command line inp
 - **Output**: The function returns a boolean indicating whether the parsing was successful or not.
 - **Functions called**:
     - [`CLI::CLI11_INLINE::Classifier::_recognize`](#Classifier_recognize)
-    - [`CLI::CLI11_INLINE::_has_remaining_positionals`](#11_INLINE_has_remaining_positionals)
+    - [`CLI::CLI11_INLINE::_has_remaining_positionals`](#CLI11_INLINE_has_remaining_positionals)
     - [`CLI::void::_move_to_missing`](#void_move_to_missing)
     - [`CLI::bool::_parse_subcommand`](#bool_parse_subcommand)
     - [`CLI::bool::_parse_arg`](#bool_parse_arg)
@@ -1352,17 +1352,17 @@ The `deprecate_option` function marks an `Option` as deprecated and suggests a r
 
 ---
 ### retire\_option<!-- {{#callable:CLI::retire_option}} -->
-The [`retire_option`](#retire_option) function marks an option as retired in the given application.
+The [`retire_option`](#CLIretire_option) function marks an option as retired in the given application.
 - **Inputs**:
     - `app`: A reference to an `App` object representing the application in which the option is being retired.
     - `option_name`: A string representing the name of the option to be retired.
 - **Control Flow**:
     - The function first retrieves the option associated with the provided `option_name` from the `app` using `get_option_no_throw`.
-    - If the option exists, it calls the overloaded [`retire_option`](#retire_option) function to handle the retirement process.
+    - If the option exists, it calls the overloaded [`retire_option`](#CLIretire_option) function to handle the retirement process.
     - If the option does not exist, it creates a new option with the same name, indicating that it has been retired and has no effect.
 - **Output**: The function does not return a value; it modifies the state of the application by retiring the specified option.
 - **Functions called**:
-    - [`CLI::retire_option`](#retire_option)
+    - [`CLI::retire_option`](#CLIretire_option)
 
 
 ---

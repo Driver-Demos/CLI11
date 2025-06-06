@@ -1,5 +1,5 @@
 ## Folders
-- **[impl](CLI/impl.driver.md)**: The `impl` folder in the `CLI11` codebase contains a collection of inline implementation files that provide detailed functionality for parsing command-line arguments, managing configurations, formatting help text, handling string manipulations, and validating inputs.
+- **[impl](CLI/impl.driver.md)**: The `impl` folder in the `CLI11` codebase contains a collection of inline implementation files that provide detailed functionalities for parsing command-line arguments, managing configurations, formatting help text, handling string manipulations, and validating inputs.
 
 ## Files
 - **[App.hpp](CLI/App.hpp.driver.md)**: The `App.hpp` file in the `CLI11` codebase defines the `App` class, which is used to create and manage command-line applications, including options, flags, subcommands, and various configurations for parsing and handling command-line arguments.

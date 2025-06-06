@@ -118,7 +118,7 @@ The `first` function template forwards its input argument, `pair_value`, preserv
     - It uses `std::forward` to forward `pair_value`, preserving its value category (lvalue or rvalue).
     - The function returns the result of `std::forward<Q>(pair_value)`.
 - **Output**: The function returns the forwarded `pair_value`, preserving its original value category.
-- **See also**: [`CLI::detail::pair_adaptor`](#pair_adaptor)  (Data Structure)
+- **See also**: [`CLI::detail::pair_adaptor`](#detailpair_adaptor)  (Data Structure)
 
 
 ---
@@ -131,7 +131,7 @@ The `second` function template forwards its input argument, `pair_value`, using 
     - It uses `std::forward` to forward `pair_value`, preserving its value category (lvalue or rvalue).
     - The function returns the result of `std::forward<Q>(pair_value)`, which is essentially the input `pair_value`.
 - **Output**: The function returns the input `pair_value`, forwarded with its original value category preserved.
-- **See also**: [`CLI::detail::pair_adaptor`](#pair_adaptor)  (Data Structure)
+- **See also**: [`CLI::detail::pair_adaptor`](#detailpair_adaptor)  (Data Structure)
 
 
 
@@ -353,13 +353,13 @@ The `tuple_value_string` function recursively converts each element of a tuple t
     - `value`: The tuple-like object passed to the function, which is being processed to generate a string representation.
 - **Control Flow**:
     - The function checks if the current index I is less than the number of elements in the tuple using `std::enable_if` and `type_count_base<T>::value`.
-    - It retrieves the I-th element of the tuple using `std::get<I>(value)` and converts it to a string using [`to_string`](#to_string).
+    - It retrieves the I-th element of the tuple using `std::get<I>(value)` and converts it to a string using [`to_string`](#detailto_string).
     - The function concatenates the string representation of the current element with a comma and the result of a recursive call to `tuple_value_string` with the next index (I + 1).
     - If the resulting string ends with a comma, it removes the trailing comma using `str.pop_back()`.
     - Finally, the function returns the constructed string.
 - **Output**: A string representing the concatenated string values of the tuple elements, separated by commas.
 - **Functions called**:
-    - [`CLI::detail::to_string`](#to_string)
+    - [`CLI::detail::to_string`](#detailto_string)
 
 
 ---
@@ -442,7 +442,7 @@ The `tuple_name` function recursively generates a comma-separated string represe
 
 ---
 ### integral\_conversion<!-- {{#callable:CLI::detail::integral_conversion}} -->
-The [`integral_conversion`](#integral_conversion) function attempts to convert a string representation of a number into a signed integral type, handling various formats and edge cases.
+The [`integral_conversion`](#detailintegral_conversion) function attempts to convert a string representation of a number into a signed integral type, handling various formats and edge cases.
 - **Inputs**:
     - `input`: A constant reference to a `std::string` that represents the number to be converted.
     - `output`: A reference to a variable of type `T` (which must be a signed integral type) where the converted value will be stored.
@@ -451,15 +451,15 @@ The [`integral_conversion`](#integral_conversion) function attempts to convert a
     - Use `std::strtoll` to attempt conversion of the string to a 64-bit signed integer, checking for range errors.
     - If conversion is successful and the entire string was consumed, cast the result to type `T` and return true.
     - Handle special case where input is "true" by setting output to 1 and returning true.
-    - If the input contains group separators, remove them and recursively call [`integral_conversion`](#integral_conversion).
-    - Trim trailing whitespace and recursively call [`integral_conversion`](#integral_conversion) if necessary.
+    - If the input contains group separators, remove them and recursively call [`integral_conversion`](#detailintegral_conversion).
+    - Trim trailing whitespace and recursively call [`integral_conversion`](#detailintegral_conversion) if necessary.
     - Handle octal and binary number formats by checking prefixes and using appropriate base in `std::strtoll`.
     - Return false if none of the conditions for successful conversion are met.
 - **Output**: Returns a boolean indicating whether the conversion was successful, with the result stored in the `output` parameter if successful.
 - **Functions called**:
     - [`CLI::detail::std::string::get_group_separators`](impl/StringTools_inl.hpp.driver.md#stringget_group_separators)
-    - [`CLI::detail::integral_conversion`](#integral_conversion)
-    - [`CLI::detail::trim_copy`](StringTools.hpp.driver.md#trim_copy)
+    - [`CLI::detail::integral_conversion`](#detailintegral_conversion)
+    - [`CLI::detail::trim_copy`](StringTools.hpp.driver.md#detailtrim_copy)
 
 
 ---
@@ -498,12 +498,12 @@ The `lexical_assign` function attempts to convert a string input into a specifie
     - `output`: A reference to an `AssignTo` type variable where the converted value will be stored.
 - **Control Flow**:
     - Initialize a `ConvertTo` type variable `val` to its default value.
-    - Check if the input string is empty; if so, set `parse_result` to true, otherwise attempt to convert the input string to `val` using [`lexical_cast`](#lexical_cast).
+    - Check if the input string is empty; if so, set `parse_result` to true, otherwise attempt to convert the input string to `val` using [`lexical_cast`](#detaillexical_cast).
     - If `parse_result` is true, assign `val` to `output` using the constructor of `AssignTo` to allow implicit conversions.
     - Return `parse_result` indicating whether the conversion was successful.
 - **Output**: Returns a boolean indicating whether the conversion from the input string to the output type was successful.
 - **Functions called**:
-    - [`CLI::detail::lexical_cast`](#lexical_cast)
+    - [`CLI::detail::lexical_cast`](#detaillexical_cast)
 
 
 ---
@@ -547,13 +547,13 @@ The `tuple_type_conversion` function converts a subset of a vector of strings in
 - **Control Flow**:
     - Initialize `index` to the minimum subtype count of `ConvertTo` and `mx_count` to the subtype count of `ConvertTo`.
     - Calculate `mx` as the minimum of `mx_count` and the size of `strings` minus one.
-    - Iterate over `strings` starting from `index` until `mx`, checking for a separator using [`is_separator`](StringTools.hpp.driver.md#is_separator); break if found.
+    - Iterate over `strings` starting from `index` until `mx`, checking for a separator using [`is_separator`](StringTools.hpp.driver.md#detailis_separator); break if found.
     - Perform lexical conversion on the subset of `strings` up to `index` and store the result in `output`.
     - If `strings` has more elements than `index`, erase the processed elements and the separator; otherwise, clear `strings`.
     - Return the result of the lexical conversion as a boolean.
 - **Output**: A boolean indicating whether the lexical conversion was successful.
 - **Functions called**:
-    - [`CLI::detail::is_separator`](StringTools.hpp.driver.md#is_separator)
+    - [`CLI::detail::is_separator`](StringTools.hpp.driver.md#detailis_separator)
 
 
 ---
@@ -564,7 +564,7 @@ The `sum_string_vector` function attempts to sum a vector of strings as numerica
 - **Control Flow**:
     - Initialize a double `val` to 0.0 and a boolean `fail` to false.
     - Iterate over each string `arg` in the `values` vector.
-    - Attempt to convert `arg` to a double `tv` using [`lexical_cast`](#lexical_cast).
+    - Attempt to convert `arg` to a double `tv` using [`lexical_cast`](#detaillexical_cast).
     - If conversion fails, reset `errno` and attempt to convert `arg` to a flag value using `detail::to_flag_value`.
     - Set `fail` to true and break the loop if `errno` is non-zero after flag conversion.
     - Add `tv` to `val` if conversion is successful.
@@ -572,6 +572,6 @@ The `sum_string_vector` function attempts to sum a vector of strings as numerica
     - If `fail` is false, convert `val` to a string with 16 decimal precision and assign it to `output`.
 - **Output**: A string representing either the sum of the numerical values of the input strings or the concatenated input strings if any conversion fails.
 - **Functions called**:
-    - [`CLI::detail::lexical_cast`](#lexical_cast)
+    - [`CLI::detail::lexical_cast`](#detaillexical_cast)
 
 

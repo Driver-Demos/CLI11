@@ -168,8 +168,8 @@ The `yetanotherstring` constructor initializes an instance of the `yetanotherstr
     - [`objWrapper::objWrapper`](#objWrapperobjWrapper)
     - [`objWrapper::objWrapper`](#objWrapperobjWrapper)
     - [`objWrapper::objWrapper`](#objWrapperobjWrapper)
-    - [`objWrapper::operator=`](#objWrapperoperator)
-    - [`objWrapper::operator=`](#objWrapperoperator)
+    - [`objWrapper::operator=`](#objWrapperoperator=)
+    - [`objWrapper::operator=`](#objWrapperoperator=)
     - [`objWrapper::value`](#objWrappervalue)
 
 **Methods**
@@ -281,9 +281,9 @@ The `value` method returns a constant reference to the private member `val_` of 
     - [`objWrapperRestricted::objWrapperRestricted`](#objWrapperRestrictedobjWrapperRestricted)
     - [`objWrapperRestricted::objWrapperRestricted`](#objWrapperRestrictedobjWrapperRestricted)
     - [`objWrapperRestricted::objWrapperRestricted`](#objWrapperRestrictedobjWrapperRestricted)
-    - [`objWrapperRestricted::operator=`](#objWrapperRestrictedoperator)
-    - [`objWrapperRestricted::operator=`](#objWrapperRestrictedoperator)
-    - [`objWrapperRestricted::operator=`](#objWrapperRestrictedoperator)
+    - [`objWrapperRestricted::operator=`](#objWrapperRestrictedoperator=)
+    - [`objWrapperRestricted::operator=`](#objWrapperRestrictedoperator=)
+    - [`objWrapperRestricted::operator=`](#objWrapperRestrictedoperator=)
     - [`objWrapperRestricted::value`](#objWrapperRestrictedvalue)
 
 **Methods**
@@ -483,7 +483,7 @@ The `ivalue` function returns the integer value stored in the `ival_` member of 
 - **Member Functions**:
     - [`AobjWrapper::AobjWrapper`](#AobjWrapperAobjWrapper)
     - [`AobjWrapper::AobjWrapper`](#AobjWrapperAobjWrapper)
-    - [`AobjWrapper::operator=`](#AobjWrapperoperator)
+    - [`AobjWrapper::operator=`](#AobjWrapperoperator=)
     - [`AobjWrapper::value`](#AobjWrappervalue)
 
 **Methods**
@@ -610,11 +610,11 @@ The function `lexical_cast<anotherstring>` attempts to convert a `std::string` i
     - `input`: A constant reference to a `std::string` that represents the input string to be converted.
     - `output`: A reference to an `anotherstring` object where the converted result will be stored.
 - **Control Flow**:
-    - The function calls [`lexical_cast`](../include/CLI/TypeTools.hpp.driver.md#lexical_cast) with the input string and the `s` member of the `anotherstring` output object.
-    - If the conversion is successful (i.e., [`lexical_cast`](../include/CLI/TypeTools.hpp.driver.md#lexical_cast) returns true), an exclamation mark is appended to the `s` member of the `anotherstring` object.
-    - The function returns the result of the [`lexical_cast`](../include/CLI/TypeTools.hpp.driver.md#lexical_cast) call, indicating whether the conversion was successful.
+    - The function calls [`lexical_cast`](../include/CLI/TypeTools.hpp.driver.md#detaillexical_cast) with the input string and the `s` member of the `anotherstring` output object.
+    - If the conversion is successful (i.e., [`lexical_cast`](../include/CLI/TypeTools.hpp.driver.md#detaillexical_cast) returns true), an exclamation mark is appended to the `s` member of the `anotherstring` object.
+    - The function returns the result of the [`lexical_cast`](../include/CLI/TypeTools.hpp.driver.md#detaillexical_cast) call, indicating whether the conversion was successful.
 - **Output**: A boolean value indicating whether the conversion from `std::string` to `anotherstring` was successful.
 - **Functions called**:
-    - [`CLI::detail::lexical_cast`](../include/CLI/TypeTools.hpp.driver.md#lexical_cast)
+    - [`CLI::detail::lexical_cast`](../include/CLI/TypeTools.hpp.driver.md#detaillexical_cast)
 
 

@@ -1,5 +1,5 @@
 # Purpose
-This C++ source code file is part of a library designed to provide validation functionality, specifically for command-line interface (CLI) applications. The file defines a set of validators within the `CLI` namespace, which are used to ensure that input data meets certain criteria. The primary class, `Validator`, is equipped with several operator overloads ([`operator()`](#stringoperator)), [`operator&`](#Validatoroperator), [`operator|`](#Validatoroperator), and [`operator!`](#Validatoroperator)) to facilitate the combination and logical manipulation of validation rules. These validators can be used to check the existence of files and directories, validate IPv4 addresses, and transform escaped strings, among other tasks. The file also includes utility functions for path checking, which are conditionally compiled based on the availability of the C++17 filesystem library.
+This C++ source code file is part of a library designed to provide validation functionality, specifically for command-line interface (CLI) applications. The file defines a set of validators within the `CLI` namespace, which are used to ensure that input data meets certain criteria. The primary class, `Validator`, is equipped with several operator overloads ([`operator()`](#stringoperator()), [`operator&`](#Validatoroperator&), [`operator|`](#Validatoroperator|), and [`operator!`](#Validatoroperator!)) to facilitate the combination and logical manipulation of validation rules. These validators can be used to check the existence of files and directories, validate IPv4 addresses, and transform escaped strings, among other tasks. The file also includes utility functions for path checking, which are conditionally compiled based on the availability of the C++17 filesystem library.
 
 The code is structured to be part of a larger library, likely intended for inclusion in other projects via header files. It provides a public API for creating and using validators, which can be extended or customized as needed. The validators are implemented as inline functions, suggesting a focus on performance and ease of integration. The file also includes mechanisms for handling different operating systems and compiler environments, ensuring broad compatibility. Overall, this file is a specialized component of a CLI library, offering robust validation capabilities for command-line applications.
 # Imports and Dependencies
@@ -28,18 +28,18 @@ The code is structured to be part of a larger library, likely intended for inclu
 
 ---
 ### Validator<!-- {{#data_structure:CLI::Validator}} -->
-- **Description**: [See definition](../Validators.hpp.driver.md#Validator)
+- **Description**: [See definition](../Validators.hpp.driver.md#CLIValidator)
 - **Member Functions**:
     - [`CLI::Validator::Validator`](../Validators.hpp.driver.md#ValidatorValidator)
     - [`CLI::Validator::Validator`](../Validators.hpp.driver.md#ValidatorValidator)
     - [`CLI::Validator::Validator`](../Validators.hpp.driver.md#ValidatorValidator)
     - [`CLI::Validator::Validator`](../Validators.hpp.driver.md#ValidatorValidator)
     - [`CLI::Validator::operation`](../Validators.hpp.driver.md#Validatoroperation)
-    - [`CLI::Validator::operator()`](../Validators.hpp.driver.md#Validatoroperator))
+    - [`CLI::Validator::operator()`](../Validators.hpp.driver.md#Validatoroperator())
     - [`CLI::Validator::description`](../Validators.hpp.driver.md#Validatordescription)
-    - [`CLI::Validator::operator&`](#Validatoroperator)
-    - [`CLI::Validator::operator|`](#Validatoroperator)
-    - [`CLI::Validator::operator!`](#Validatoroperator)
+    - [`CLI::Validator::operator&`](#Validatoroperator&)
+    - [`CLI::Validator::operator|`](#Validatoroperator|)
+    - [`CLI::Validator::operator!`](#Validatoroperator!)
     - [`CLI::Validator::_merge_description`](#Validator_merge_description)
 
 **Methods**
@@ -58,7 +58,7 @@ The `operator&` function combines two `Validator` objects into a new `Validator`
     - The `application_index_` of `newval` is set to the `application_index_` of the current validator.
     - The new `Validator` object `newval` is returned.
 - **Output**: A new `Validator` object that represents the logical AND combination of the two input validators.
-- **See also**: [`CLI::Validator`](../Validators.hpp.driver.md#Validator)  (Data Structure)
+- **See also**: [`CLI::Validator`](../Validators.hpp.driver.md#CLIValidator)  (Data Structure)
 
 
 ---
@@ -75,7 +75,7 @@ The `operator|` function combines two `Validator` objects using a logical OR ope
     - The `application_index_` of `newval` is set to the `application_index_` of the current validator.
     - The new `Validator` object `newval` is returned.
 - **Output**: A new `Validator` object that represents the logical OR combination of the two input validators.
-- **See also**: [`CLI::Validator`](../Validators.hpp.driver.md#Validator)  (Data Structure)
+- **See also**: [`CLI::Validator`](../Validators.hpp.driver.md#CLIValidator)  (Data Structure)
 
 
 ---
@@ -89,7 +89,7 @@ The `operator!` function in the `Validator` class creates a new `Validator` obje
     - The `active_` and `application_index_` properties of the current `Validator` are copied to `newval`.
     - The modified `newval` is returned.
 - **Output**: A new `Validator` object with negated logic and modified description and validation function.
-- **See also**: [`CLI::Validator`](../Validators.hpp.driver.md#Validator)  (Data Structure)
+- **See also**: [`CLI::Validator`](../Validators.hpp.driver.md#CLIValidator)  (Data Structure)
 
 
 ---
@@ -106,7 +106,7 @@ The `_merge_description` function combines the description functions of two `Val
     - Check if either description is empty; if so, concatenate them directly.
     - If both descriptions are non-empty, format them with parentheses and the merger string in between.
 - **Output**: The function does not return a value; it modifies the `desc_function_` member of the current `Validator` object.
-- **See also**: [`CLI::Validator`](../Validators.hpp.driver.md#Validator)  (Data Structure)
+- **See also**: [`CLI::Validator`](../Validators.hpp.driver.md#CLIValidator)  (Data Structure)
 
 
 
@@ -181,7 +181,7 @@ The `AsSizeValue` constructor initializes an `AsNumberWithUnit` object with a si
     - If `kb_is_1000` is false, it sets the description to "SIZE [b, kb(=1024b), ...]".
 - **Output**: The function does not return a value; it initializes an object of the `AsSizeValue` class.
 - **Functions called**:
-    - [`CLI::CLI11_INLINE::description`](#11_INLINEdescription)
+    - [`CLI::CLI11_INLINE::description`](#CLI11_INLINEdescription)
 
 
 ---

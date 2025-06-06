@@ -70,7 +70,7 @@ The file includes several technical components, such as the `ConfigItem` structu
     - [`ConfigBase::index`](#ConfigBaseindex)
     - [`ConfigBase::allowDuplicateFields`](#ConfigBaseallowDuplicateFields)
 - **Inherits From**:
-    - [`CLI::Config`](#Config)
+    - [`CLI::Config`](#CLIConfig)
 
 **Methods**
 
