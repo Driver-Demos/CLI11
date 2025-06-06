@@ -1,7 +1,7 @@
 # Purpose
 This C++ source file is part of a larger project that involves command-line interface (CLI) applications, specifically focusing on the creation and management of a "fuzzing" application. The primary functionality of this file is to define and configure a CLI application using the `CLI::App` class, which is part of a library designed to facilitate the creation of command-line applications. The file includes the implementation of the `FuzzApp` class, which provides methods to generate a CLI application with various options, flags, and subcommands. The [`generateApp`](#FuzzAppgenerateApp) method is central to this file, as it sets up a comprehensive set of command-line options and flags, including integer, floating-point, atomic, and vector types, as well as complex data structures like tuples and pairs. Additionally, the file includes functionality for validating and transforming command-line inputs, as well as comparing instances of `FuzzApp` for equality.
 
-The file also contains utility functions such as [`print_string_comparison`](#print_string_comparison) for detailed string comparison output, and [`modify_option`](#FuzzAppmodify_option) for altering the behavior of CLI options based on a modifier string. The [`add_custom_options`](#FuzzAppadd_custom_options) method allows for dynamic addition of options based on a string configuration, demonstrating the file's flexibility in handling various command-line scenarios. This file is not an executable on its own but serves as a component of a larger system, likely intended to be compiled and linked with other parts of the project. It does not define public APIs or external interfaces directly but provides a robust internal mechanism for configuring and managing command-line options within the context of the project.
+The file also contains utility functions such as [`print_string_comparison`](#CLIprint_string_comparison) for detailed string comparison output, and [`modify_option`](#FuzzAppmodify_option) for altering the behavior of CLI options based on a modifier string. The [`add_custom_options`](#FuzzAppadd_custom_options) method allows for dynamic addition of options based on a string configuration, demonstrating the file's flexibility in handling various command-line scenarios. This file is not an executable on its own but serves as a component of a larger system, likely intended to be compiled and linked with other parts of the project. It does not define public APIs or external interfaces directly but provides a robust internal mechanism for configuring and managing command-line options within the context of the project.
 # Imports and Dependencies
 
 ---
@@ -14,7 +14,7 @@ The file also contains utility functions such as [`print_string_comparison`](#pr
 
 ---
 ### FuzzApp<!-- {{#data_structure:CLI::FuzzApp}} -->
-- **Description**: [See definition](fuzzApp.hpp.driver.md#FuzzApp)
+- **Description**: [See definition](fuzzApp.hpp.driver.md#CLIFuzzApp)
 - **Member Functions**:
     - [`CLI::FuzzApp::generateApp`](#FuzzAppgenerateApp)
     - [`CLI::FuzzApp::compare`](#FuzzAppcompare)
@@ -45,7 +45,7 @@ The `generateApp` function creates and configures a `CLI::App` object with vario
 - **Functions called**:
     - [`Range::Range`](../include/CLI/Validators.hpp.driver.md#RangeRange)
     - [`Bound::Bound`](../include/CLI/Validators.hpp.driver.md#BoundBound)
-- **See also**: [`CLI::FuzzApp`](fuzzApp.hpp.driver.md#FuzzApp)  (Data Structure)
+- **See also**: [`CLI::FuzzApp`](fuzzApp.hpp.driver.md#CLIFuzzApp)  (Data Structure)
 
 
 ---
@@ -63,8 +63,8 @@ The `compare` function checks if two `FuzzApp` objects are equal by comparing th
     - If all comparisons pass, the function returns `true`, indicating equality.
 - **Output**: A boolean value indicating whether the two `FuzzApp` objects are equal (`true`) or not (`false`).
 - **Functions called**:
-    - [`CLI::print_string_comparison`](#print_string_comparison)
-- **See also**: [`CLI::FuzzApp`](fuzzApp.hpp.driver.md#FuzzApp)  (Data Structure)
+    - [`CLI::print_string_comparison`](#CLIprint_string_comparison)
+- **See also**: [`CLI::FuzzApp`](fuzzApp.hpp.driver.md#CLIFuzzApp)  (Data Structure)
 
 
 ---
@@ -83,7 +83,7 @@ The `modify_option` function modifies a CLI option based on a string of modifier
     - Apply modifications such as setting the option as required, expected number of arguments, case sensitivity, delimiter, and multi-option policies based on the character.
     - If a character does not match any case, it is ignored.
 - **Output**: The function does not return a value; it modifies the `CLI::Option` object in place.
-- **See also**: [`CLI::FuzzApp`](fuzzApp.hpp.driver.md#FuzzApp)  (Data Structure)
+- **See also**: [`CLI::FuzzApp`](fuzzApp.hpp.driver.md#CLIFuzzApp)  (Data Structure)
 
 
 ---
@@ -104,7 +104,7 @@ The `add_custom_options` function parses a description string to dynamically add
 - **Output**: Returns the final value of `current_index`, indicating the position in the `description_string` after processing.
 - **Functions called**:
     - [`CLI::FuzzApp::modify_option`](#FuzzAppmodify_option)
-- **See also**: [`CLI::FuzzApp`](fuzzApp.hpp.driver.md#FuzzApp)  (Data Structure)
+- **See also**: [`CLI::FuzzApp`](fuzzApp.hpp.driver.md#CLIFuzzApp)  (Data Structure)
 
 
 

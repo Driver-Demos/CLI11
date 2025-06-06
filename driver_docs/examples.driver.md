@@ -1,5 +1,5 @@
 ## Folders
-- **[subcom_in_files](examples/subcom_in_files.driver.md)**: The `subcom_in_files` folder in the `CLI11` codebase contains files that configure and implement a command-line interface application with subcommands using the CLI11 library, including build configuration and source code for subcommand setup and execution.
+- **[subcom_in_files](examples/subcom_in_files.driver.md)**: The `subcom_in_files` folder in the `CLI11` codebase contains source files and a CMake configuration for building a command-line interface application with subcommands using the CLI11 library.
 
 ## Files
 - **[arg_capture.cpp](examples/arg_capture.cpp.driver.md)**: The `arg_capture.cpp` file is an example demonstrating the use of `prefix_command` in the CLI11 library to capture all subsequent arguments of a subcommand and display them.

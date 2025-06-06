@@ -56,7 +56,7 @@ The `__init__` method initializes a `HeaderGroups` object by compiling a regular
     - The method compiles a regular expression pattern using the provided `tag` and the predefined `tag_str` template, with flags for multiline, dot-all, and verbose modes.
     - It initializes the `HeaderGroups` object as a dictionary by calling the superclass `dict`'s `__init__` method.
 - **Output**: The method does not return any value; it initializes the `HeaderGroups` object with a compiled regular expression matcher and sets it up as a dictionary.
-- **See also**: [`CLI11/scripts/MakeSingleHeader.HeaderGroups`](#HeaderGroups)  (Base Class)
+- **See also**: [`CLI11/scripts/MakeSingleHeader.HeaderGroups`](#CLI11/scripts/MakeSingleHeaderHeaderGroups)  (Base Class)
 
 
 ---
@@ -73,7 +73,7 @@ The `read_header` method reads a header file and updates the dictionary with ite
     - If the action is 'set', update the dictionary entry for the name with a union of the existing set and the new content split into lines.
     - If the action is neither 'verbatim' nor 'set', raise a RuntimeError indicating an unrecognized action.
 - **Output**: The method updates the dictionary (inherited from `dict`) with new entries or modifies existing ones based on the actions specified in the header file.
-- **See also**: [`CLI11/scripts/MakeSingleHeader.HeaderGroups`](#HeaderGroups)  (Base Class)
+- **See also**: [`CLI11/scripts/MakeSingleHeader.HeaderGroups`](#CLI11/scripts/MakeSingleHeaderHeaderGroups)  (Base Class)
 
 
 ---
@@ -85,7 +85,7 @@ The `post_process` method converts any set values in the `HeaderGroups` dictiona
     - Checks if the value associated with the key is a set.
     - If the value is a set, it converts the set into a sorted list of strings joined by newline characters, and assigns this string back to the key in the dictionary.
 - **Output**: The method modifies the `HeaderGroups` dictionary in place, converting set values to multi-line strings.
-- **See also**: [`CLI11/scripts/MakeSingleHeader.HeaderGroups`](#HeaderGroups)  (Base Class)
+- **See also**: [`CLI11/scripts/MakeSingleHeader.HeaderGroups`](#CLI11/scripts/MakeSingleHeaderHeaderGroups)  (Base Class)
 
 
 
@@ -114,7 +114,7 @@ The `make_header` function generates a single header file from a template and a 
     - If an output path is provided, write the single header content to the specified file and print a creation message; otherwise, print the single header content to the console.
 - **Output**: The function outputs a single header file either to a specified file path or to the console, depending on the 'output' argument.
 - **Functions called**:
-    - [`CLI11/scripts/MakeSingleHeader.HeaderGroups`](#HeaderGroups)
+    - [`CLI11/scripts/MakeSingleHeader.HeaderGroups`](#CLI11/scripts/MakeSingleHeaderHeaderGroups)
     - [`CLI11/scripts/MakeSingleHeader.HeaderGroups.read_header`](#HeaderGroupsread_header)
     - [`CLI11/scripts/MakeSingleHeader.HeaderGroups.post_process`](#HeaderGroupspost_process)
 

@@ -30,7 +30,7 @@ The code is structured to test different aspects of option group functionality, 
 - **Description**: The `ManyGroups` struct is a specialized data structure that extends the `TApp` class to manage multiple option groups within a command-line interface application. It contains pointers to four option groups (`main`, `g1`, `g2`, and `g3`) and six strings to store names and values associated with these groups. The constructor initializes these groups and sets up options for each group, with some options marked as required. The struct also provides a method to remove the 'required' status from these options, allowing for more flexible command-line argument parsing.
 - **Member Functions**:
     - [`ManyGroups::ManyGroups`](#ManyGroupsManyGroups)
-    - [`ManyGroups::operator=`](#ManyGroupsoperator)
+    - [`ManyGroups::operator=`](#ManyGroupsoperator=)
     - [`ManyGroups::ManyGroups`](#ManyGroupsManyGroups)
     - [`ManyGroups::remove_required`](#ManyGroupsremove_required)
 - **Inherits From**:

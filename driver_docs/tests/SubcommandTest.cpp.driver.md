@@ -26,7 +26,7 @@ The primary focus of these tests is to ensure the correct behavior of subcommand
 - **Description**: The `SubcommandProgram` struct is a specialized application class derived from `TApp`, designed to handle command-line subcommands using the CLI11 library. It includes two primary subcommands, 'start' and 'stop', each with its own set of options and flags. The 'start' subcommand can take a file name as an option, while the 'stop' subcommand has a count flag. The struct also includes a dummy flag for demonstration purposes. The copy constructor and assignment operator are deleted to prevent copying of the struct, ensuring unique instances. The constructor sets up the subcommands and their respective options, and it configures the application to display help for all commands when the `--help-all` flag is used.
 - **Member Functions**:
     - [`SubcommandProgram::SubcommandProgram`](#SubcommandProgramSubcommandProgram)
-    - [`SubcommandProgram::operator=`](#SubcommandProgramoperator)
+    - [`SubcommandProgram::operator=`](#SubcommandProgramoperator=)
     - [`SubcommandProgram::SubcommandProgram`](#SubcommandProgramSubcommandProgram)
 - **Inherits From**:
     - [`TApp`](app_helper.hpp.driver.md#TApp)
@@ -87,7 +87,7 @@ The `SubcommandProgram` constructor initializes a command-line interface with su
 - **Member Functions**:
     - [`ManySubcommands::ManySubcommands`](#ManySubcommandsManySubcommands)
     - [`ManySubcommands::ManySubcommands`](#ManySubcommandsManySubcommands)
-    - [`ManySubcommands::operator=`](#ManySubcommandsoperator)
+    - [`ManySubcommands::operator=`](#ManySubcommandsoperator=)
 - **Inherits From**:
     - [`TApp`](app_helper.hpp.driver.md#TApp)
 

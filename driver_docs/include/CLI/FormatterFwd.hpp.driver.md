@@ -41,8 +41,8 @@ The file is structured to provide a flexible and extensible framework for genera
     - [`CLI::FormatterBase::FormatterBase`](#FormatterBaseFormatterBase)
     - [`CLI::FormatterBase::FormatterBase`](#FormatterBaseFormatterBase)
     - [`CLI::FormatterBase::FormatterBase`](#FormatterBaseFormatterBase)
-    - [`CLI::FormatterBase::operator=`](#FormatterBaseoperator)
-    - [`CLI::FormatterBase::operator=`](#FormatterBaseoperator)
+    - [`CLI::FormatterBase::operator=`](#FormatterBaseoperator=)
+    - [`CLI::FormatterBase::operator=`](#FormatterBaseoperator=)
     - [`CLI::FormatterBase::~FormatterBase`](#FormatterBaseFormatterBase)
     - [`CLI::FormatterBase::label`](#FormatterBaselabel)
     - [`CLI::FormatterBase::column_width`](#FormatterBasecolumn_width)
@@ -67,7 +67,7 @@ The `FormatterBase` class provides a base structure for formatting help output i
     - A method `label` is provided to set custom labels for help printout.
     - Getter methods are available to retrieve the current settings for column widths, paragraph widths, and formatting options.
 - **Output**: The class itself does not produce any output directly, but it provides the structure and methods for derived classes to generate formatted help text.
-- **See also**: [`CLI::FormatterBase`](#FormatterBase)  (Data Structure)
+- **See also**: [`CLI::FormatterBase`](#CLIFormatterBase)  (Data Structure)
 
 
 ---
@@ -82,7 +82,7 @@ The `FormatterBase` class provides a base structure for formatting help output i
     - Several setter methods are provided to adjust formatting options, such as column widths and label settings.
     - Getter methods are available to retrieve current formatting settings and label values.
 - **Output**: The class itself does not produce any direct output but provides a framework for derived classes to generate formatted help text.
-- **See also**: [`CLI::FormatterBase`](#FormatterBase)  (Data Structure)
+- **See also**: [`CLI::FormatterBase`](#CLIFormatterBase)  (Data Structure)
 
 
 ---
@@ -97,7 +97,7 @@ The `FormatterBase` class provides a base structure for formatting help output i
     - Several setter methods are provided to adjust the formatting options, such as column widths and enabling/disabling formatting for descriptions and footers.
     - Getter methods are available to retrieve the current settings of the formatting options and labels.
 - **Output**: The class itself does not produce any direct output but provides a framework for derived classes to generate formatted help text.
-- **See also**: [`CLI::FormatterBase`](#FormatterBase)  (Data Structure)
+- **See also**: [`CLI::FormatterBase`](#CLIFormatterBase)  (Data Structure)
 
 
 ---
@@ -108,7 +108,7 @@ The `operator=` function in the `FormatterBase` class provides default copy and 
     - The function is defined as a defaulted assignment operator, meaning it uses the compiler-generated default behavior for both copy and move assignments.
     - There is no explicit logic or control flow within the function itself as it relies on the default behavior provided by the compiler.
 - **Output**: The function returns a reference to the `FormatterBase` object that has been assigned.
-- **See also**: [`CLI::FormatterBase`](#FormatterBase)  (Data Structure)
+- **See also**: [`CLI::FormatterBase`](#CLIFormatterBase)  (Data Structure)
 
 
 ---
@@ -119,7 +119,7 @@ The `operator=` function is a default move assignment operator for the `Formatte
     - The function is defined as a default move assignment operator, meaning it will automatically handle the move assignment of `FormatterBase` objects by transferring ownership of resources from the source object to the target object.
     - Since it is marked as `default`, the compiler will generate the move assignment operator implementation, which typically involves moving each member of the class from the source to the target.
 - **Output**: The function returns a reference to the `FormatterBase` object that has been assigned the values from the source object.
-- **See also**: [`CLI::FormatterBase`](#FormatterBase)  (Data Structure)
+- **See also**: [`CLI::FormatterBase`](#CLIFormatterBase)  (Data Structure)
 
 
 ---
@@ -131,7 +131,7 @@ The `~FormatterBase` function is a virtual destructor for the `FormatterBase` cl
     - The destructor is marked with `noexcept` to indicate that it does not throw exceptions, which is a good practice for destructors.
     - The destructor is defined as an empty body, indicating no specific cleanup is required for the `FormatterBase` class itself.
 - **Output**: The function does not produce any output as it is a destructor.
-- **See also**: [`CLI::FormatterBase`](#FormatterBase)  (Data Structure)
+- **See also**: [`CLI::FormatterBase`](#CLIFormatterBase)  (Data Structure)
 
 
 ---
@@ -144,7 +144,7 @@ The `label` function sets a key-value pair in the `labels_` map to customize hel
     - The function takes two string parameters, `key` and `val`.
     - It assigns the value `val` to the key `key` in the `labels_` map, effectively setting or updating the label.
 - **Output**: The function does not return any value; it modifies the `labels_` map in place.
-- **See also**: [`CLI::FormatterBase`](#FormatterBase)  (Data Structure)
+- **See also**: [`CLI::FormatterBase`](#CLIFormatterBase)  (Data Structure)
 
 
 ---
@@ -156,7 +156,7 @@ The `column_width` function sets the width of the left column for options, flags
     - The function takes a single input parameter `val`.
     - It assigns the value of `val` to the `column_width_` member variable of the `FormatterBase` class.
 - **Output**: The function does not return any value; it modifies the `column_width_` member variable in place.
-- **See also**: [`CLI::FormatterBase`](#FormatterBase)  (Data Structure)
+- **See also**: [`CLI::FormatterBase`](#CLIFormatterBase)  (Data Structure)
 
 
 ---
@@ -168,7 +168,7 @@ The `right_column_width` function sets the width of the right column, which is u
     - The function takes a single input parameter `val`.
     - It assigns the value of `val` to the member variable `right_column_width_`.
 - **Output**: The function does not return any value; it modifies the internal state of the `FormatterBase` object by setting the `right_column_width_` member variable.
-- **See also**: [`CLI::FormatterBase`](#FormatterBase)  (Data Structure)
+- **See also**: [`CLI::FormatterBase`](#CLIFormatterBase)  (Data Structure)
 
 
 ---
@@ -180,7 +180,7 @@ The `description_paragraph_width` function sets the width of the description par
     - The function takes a single input parameter `val`.
     - It assigns the value of `val` to the member variable `description_paragraph_width_`.
 - **Output**: This function does not return any value; it modifies the internal state of the `FormatterBase` object by setting the `description_paragraph_width_` member variable.
-- **See also**: [`CLI::FormatterBase`](#FormatterBase)  (Data Structure)
+- **See also**: [`CLI::FormatterBase`](#CLIFormatterBase)  (Data Structure)
 
 
 ---
@@ -191,7 +191,7 @@ The `footer_paragraph_width` function sets the width of the footer paragraph in 
 - **Control Flow**:
     - The function assigns the input value `val` to the member variable `footer_paragraph_width_`.
 - **Output**: This function does not return any value.
-- **See also**: [`CLI::FormatterBase`](#FormatterBase)  (Data Structure)
+- **See also**: [`CLI::FormatterBase`](#CLIFormatterBase)  (Data Structure)
 
 
 ---
@@ -203,7 +203,7 @@ The `enable_description_formatting` function sets the state of the `enable_descr
     - The function takes a boolean input `value`, which defaults to true if not provided.
     - It assigns the input `value` to the `enable_description_formatting_` member variable of the `FormatterBase` class.
 - **Output**: The function does not return any value; it modifies the state of the `enable_description_formatting_` member variable.
-- **See also**: [`CLI::FormatterBase`](#FormatterBase)  (Data Structure)
+- **See also**: [`CLI::FormatterBase`](#CLIFormatterBase)  (Data Structure)
 
 
 ---
@@ -214,7 +214,7 @@ The `enable_footer_formatting` function sets the state of footer formatting in t
 - **Control Flow**:
     - The function assigns the input boolean value to the `enable_footer_formatting_` member variable of the `FormatterBase` class.
 - **Output**: This function does not return any value.
-- **See also**: [`CLI::FormatterBase`](#FormatterBase)  (Data Structure)
+- **See also**: [`CLI::FormatterBase`](#CLIFormatterBase)  (Data Structure)
 
 
 
@@ -280,8 +280,8 @@ The `make_help` function calls a stored lambda function to generate help text fo
     - [`Formatter::Formatter`](#FormatterFormatter)
     - [`Formatter::Formatter`](#FormatterFormatter)
     - [`Formatter::Formatter`](#FormatterFormatter)
-    - [`Formatter::operator=`](#Formatteroperator)
-    - [`Formatter::operator=`](#Formatteroperator)
+    - [`Formatter::operator=`](#Formatteroperator=)
+    - [`Formatter::operator=`](#Formatteroperator=)
 - **Inherits From**:
     - [`CLI::FormatterBase::FormatterBase`](#FormatterBaseFormatterBase)
 

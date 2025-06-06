@@ -87,7 +87,7 @@ The `group` function sets the group membership of an option to a specified name 
 - **Output**: A pointer to the current object cast to `CRTP *`, allowing for method chaining.
 - **Functions called**:
     - [`IncorrectConstruction`](Error.hpp.driver.md#IncorrectConstruction)
-- **See also**: [`CLI::OptionBase`](#OptionBase)  (Data Structure)
+- **See also**: [`CLI::OptionBase`](#CLIOptionBase)  (Data Structure)
 
 
 ---
@@ -99,7 +99,7 @@ The `required` function sets the `required_` flag of an `OptionBase` object to i
     - The function assigns the input `value` to the `required_` member variable of the `OptionBase` class.
     - It then returns a pointer to the current object, cast to the `CRTP` type.
 - **Output**: A pointer to the current object, cast to the `CRTP` type, allowing for method chaining.
-- **See also**: [`CLI::OptionBase`](#OptionBase)  (Data Structure)
+- **See also**: [`CLI::OptionBase`](#CLIOptionBase)  (Data Structure)
 
 
 ---
@@ -114,7 +114,7 @@ The `mandatory` function sets an option as required by calling the [`required`](
 - **Output**: A pointer to the current instance of the class, cast to the CRTP type.
 - **Functions called**:
     - [`CLI::OptionBase::required`](#OptionBaserequired)
-- **See also**: [`CLI::OptionBase`](#OptionBase)  (Data Structure)
+- **See also**: [`CLI::OptionBase`](#CLIOptionBase)  (Data Structure)
 
 
 ---
@@ -126,7 +126,7 @@ The `always_capture_default` method sets the `always_capture_default_` flag to t
     - The method assigns the input boolean value to the `always_capture_default_` member variable.
     - It then returns a pointer to the current object, cast to the CRTP type.
 - **Output**: A pointer to the current object, cast to the CRTP type.
-- **See also**: [`CLI::OptionBase`](#OptionBase)  (Data Structure)
+- **See also**: [`CLI::OptionBase`](#CLIOptionBase)  (Data Structure)
 
 
 ---
@@ -136,7 +136,7 @@ The `get_required` function returns a boolean indicating whether an option is ma
 - **Control Flow**:
     - The function directly returns the value of the `required_` member variable, which is a boolean indicating if the option is required.
 - **Output**: A boolean value representing whether the option is required (`true`) or not (`false`).
-- **See also**: [`CLI::OptionBase`](#OptionBase)  (Data Structure)
+- **See also**: [`CLI::OptionBase`](#CLIOptionBase)  (Data Structure)
 
 
 ---
@@ -146,7 +146,7 @@ The `get_ignore_case` function returns the current status of the `ignore_case_` 
 - **Control Flow**:
     - The function directly returns the value of the `ignore_case_` member variable.
 - **Output**: A boolean value indicating whether case is ignored in option matching.
-- **See also**: [`CLI::OptionBase`](#OptionBase)  (Data Structure)
+- **See also**: [`CLI::OptionBase`](#CLIOptionBase)  (Data Structure)
 
 
 ---
@@ -156,7 +156,7 @@ The `get_ignore_underscore` function returns the current status of whether under
 - **Control Flow**:
     - The function directly returns the value of the `ignore_underscore_` member variable.
 - **Output**: A boolean value indicating whether underscores are ignored in option matching.
-- **See also**: [`CLI::OptionBase`](#OptionBase)  (Data Structure)
+- **See also**: [`CLI::OptionBase`](#CLIOptionBase)  (Data Structure)
 
 
 ---
@@ -166,7 +166,7 @@ The `get_configurable` function returns the status of whether an option can be i
 - **Control Flow**:
     - The function directly returns the value of the `configurable_` member variable.
 - **Output**: A boolean value indicating if the option is configurable.
-- **See also**: [`CLI::OptionBase`](#OptionBase)  (Data Structure)
+- **See also**: [`CLI::OptionBase`](#CLIOptionBase)  (Data Structure)
 
 
 ---
@@ -176,7 +176,7 @@ The `get_disable_flag_override` function returns the current status of the `disa
 - **Control Flow**:
     - The function directly returns the value of the `disable_flag_override_` member variable.
 - **Output**: A boolean value indicating whether the flag override is disabled (`true`) or not (`false`).
-- **See also**: [`CLI::OptionBase`](#OptionBase)  (Data Structure)
+- **See also**: [`CLI::OptionBase`](#CLIOptionBase)  (Data Structure)
 
 
 ---
@@ -186,7 +186,7 @@ The `get_delimiter` function returns the delimiter character used for vector arg
 - **Control Flow**:
     - The function directly returns the value of the `delimiter_` member variable.
 - **Output**: A `char` representing the delimiter character.
-- **See also**: [`CLI::OptionBase`](#OptionBase)  (Data Structure)
+- **See also**: [`CLI::OptionBase`](#CLIOptionBase)  (Data Structure)
 
 
 ---
@@ -196,7 +196,7 @@ The `get_always_capture_default` function returns the status of whether the opti
 - **Control Flow**:
     - The function directly returns the value of the `always_capture_default_` member variable.
 - **Output**: A boolean value indicating if the option is set to automatically capture its default value.
-- **See also**: [`CLI::OptionBase`](#OptionBase)  (Data Structure)
+- **See also**: [`CLI::OptionBase`](#CLIOptionBase)  (Data Structure)
 
 
 ---
@@ -206,7 +206,7 @@ The `get_multi_option_policy` function returns the current multi-option policy s
 - **Control Flow**:
     - The function directly returns the value of the `multi_option_policy_` member variable, which is of type `MultiOptionPolicy`.
 - **Output**: The function returns a `MultiOptionPolicy` enumeration value, indicating the current policy for handling multiple arguments.
-- **See also**: [`CLI::OptionBase`](#OptionBase)  (Data Structure)
+- **See also**: [`CLI::OptionBase`](#CLIOptionBase)  (Data Structure)
 
 
 ---
@@ -218,7 +218,7 @@ The `take_last` function sets the multi-option policy of an option to `TakeLast`
     - It then calls the `multi_option_policy` method on the casted object, passing `MultiOptionPolicy::TakeLast` as the argument to set the policy.
     - Finally, the function returns the casted object.
 - **Output**: The function returns a pointer to the current object casted to the CRTP type.
-- **See also**: [`CLI::OptionBase`](#OptionBase)  (Data Structure)
+- **See also**: [`CLI::OptionBase`](#CLIOptionBase)  (Data Structure)
 
 
 ---
@@ -230,7 +230,7 @@ The `take_first` function sets the multi-option policy of an option to take only
     - It calls the `multi_option_policy` method on the casted object with `MultiOptionPolicy::TakeFirst` as the argument.
     - The function returns the casted object.
 - **Output**: A pointer to the current object of type `CRTP`. This allows for method chaining.
-- **See also**: [`CLI::OptionBase`](#OptionBase)  (Data Structure)
+- **See also**: [`CLI::OptionBase`](#CLIOptionBase)  (Data Structure)
 
 
 ---
@@ -242,7 +242,7 @@ The `take_all` function sets the multi-option policy of an option to `TakeAll`, 
     - It sets the `multi_option_policy` of the object to `MultiOptionPolicy::TakeAll`.
     - The function returns a pointer to the current object.
 - **Output**: A pointer to the current object of type `CRTP *`.
-- **See also**: [`CLI::OptionBase`](#OptionBase)  (Data Structure)
+- **See also**: [`CLI::OptionBase`](#CLIOptionBase)  (Data Structure)
 
 
 ---
@@ -254,7 +254,7 @@ The `join` function sets the multi-option policy of an option to `Join`, allowin
     - It then calls the `multi_option_policy` method on the casted object, passing `MultiOptionPolicy::Join` as the argument.
     - Finally, it returns the casted object.
 - **Output**: A pointer to the current object casted to the CRTP type.
-- **See also**: [`CLI::OptionBase`](#OptionBase)  (Data Structure)
+- **See also**: [`CLI::OptionBase`](#CLIOptionBase)  (Data Structure)
 
 
 ---
@@ -268,7 +268,7 @@ The `join` function sets a delimiter character and configures the multi-option p
     - Set the `multi_option_policy_` member variable to `MultiOptionPolicy::Join`.
     - Return the casted object.
 - **Output**: A pointer to the current object casted to the CRTP type.
-- **See also**: [`CLI::OptionBase`](#OptionBase)  (Data Structure)
+- **See also**: [`CLI::OptionBase`](#CLIOptionBase)  (Data Structure)
 
 
 ---
@@ -280,7 +280,7 @@ The `configurable` function sets the `configurable_` member variable to the spec
     - The function assigns the input boolean `value` to the member variable `configurable_`.
     - It then returns a pointer to the current object, cast to the CRTP type.
 - **Output**: A pointer to the current object, cast to the CRTP type.
-- **See also**: [`CLI::OptionBase`](#OptionBase)  (Data Structure)
+- **See also**: [`CLI::OptionBase`](#CLIOptionBase)  (Data Structure)
 
 
 ---
@@ -292,7 +292,7 @@ The `delimiter` function sets a delimiter character for vector arguments and ret
     - The function assigns the input character `value` to the member variable `delimiter_`.
     - It then returns a pointer to the current object, cast to the CRTP (Curiously Recurring Template Pattern) type.
 - **Output**: A pointer to the current object, cast to the CRTP type.
-- **See also**: [`CLI::OptionBase`](#OptionBase)  (Data Structure)
+- **See also**: [`CLI::OptionBase`](#CLIOptionBase)  (Data Structure)
 
 
 
@@ -314,7 +314,7 @@ The `delimiter` function sets a delimiter character for vector arguments and ret
     - [`CLI::OptionDefaults::disable_flag_override`](#OptionDefaultsdisable_flag_override)
     - [`CLI::OptionDefaults::delimiter`](#OptionDefaultsdelimiter)
 - **Inherits From**:
-    - [`CLI::OptionBase`](#OptionBase)
+    - [`CLI::OptionBase`](#CLIOptionBase)
 
 **Methods**
 
@@ -326,7 +326,7 @@ The `OptionDefaults` constructor initializes an instance of the `OptionDefaults`
     - The constructor `OptionDefaults()` is defined as `default`, meaning it uses the compiler-generated default constructor.
     - No additional logic or initialization is performed within this constructor.
 - **Output**: An instance of the `OptionDefaults` class is created with default values for its member variables.
-- **See also**: [`CLI::OptionDefaults`](#OptionDefaults)  (Data Structure)
+- **See also**: [`CLI::OptionDefaults`](#CLIOptionDefaults)  (Data Structure)
 
 
 ---
@@ -338,7 +338,7 @@ The `multi_option_policy` method sets the policy for handling multiple arguments
     - The method assigns the provided `value` to the `multi_option_policy_` member variable of the `OptionDefaults` class.
     - The method returns a pointer to the current instance of `OptionDefaults`.
 - **Output**: A pointer to the current instance of `OptionDefaults`, allowing for method chaining.
-- **See also**: [`CLI::OptionDefaults`](#OptionDefaults)  (Data Structure)
+- **See also**: [`CLI::OptionDefaults`](#CLIOptionDefaults)  (Data Structure)
 
 
 ---
@@ -350,7 +350,7 @@ The `ignore_case` method sets the `ignore_case_` member variable to the specifie
     - The method assigns the input `value` to the `ignore_case_` member variable.
     - The method returns the current instance of `OptionDefaults` using `this`.
 - **Output**: Returns a pointer to the current `OptionDefaults` instance.
-- **See also**: [`CLI::OptionDefaults`](#OptionDefaults)  (Data Structure)
+- **See also**: [`CLI::OptionDefaults`](#CLIOptionDefaults)  (Data Structure)
 
 
 ---
@@ -362,7 +362,7 @@ The `ignore_underscore` method sets the `ignore_underscore_` flag to determine w
     - The method assigns the input `value` to the `ignore_underscore_` member variable.
     - The method returns a pointer to the current `OptionDefaults` object (`this`).
 - **Output**: A pointer to the current `OptionDefaults` object, allowing for method chaining.
-- **See also**: [`CLI::OptionDefaults`](#OptionDefaults)  (Data Structure)
+- **See also**: [`CLI::OptionDefaults`](#CLIOptionDefaults)  (Data Structure)
 
 
 ---
@@ -374,7 +374,7 @@ The `disable_flag_override` function sets the `disable_flag_override_` member va
     - The function assigns the input boolean value to the `disable_flag_override_` member variable.
     - The function returns a pointer to the current `OptionDefaults` object.
 - **Output**: A pointer to the current `OptionDefaults` object, allowing for method chaining.
-- **See also**: [`CLI::OptionDefaults`](#OptionDefaults)  (Data Structure)
+- **See also**: [`CLI::OptionDefaults`](#CLIOptionDefaults)  (Data Structure)
 
 
 ---
@@ -386,7 +386,7 @@ The `delimiter` function sets a character to be used as a delimiter for splittin
     - The function assigns the input character `value` to the member variable `delimiter_`.
     - The function returns a pointer to the current instance of `OptionDefaults`.
 - **Output**: A pointer to the current instance of `OptionDefaults`, allowing for method chaining.
-- **See also**: [`CLI::OptionDefaults`](#OptionDefaults)  (Data Structure)
+- **See also**: [`CLI::OptionDefaults`](#CLIOptionDefaults)  (Data Structure)
 
 
 
@@ -427,9 +427,9 @@ The `delimiter` function sets a character to be used as a delimiter for splittin
 - **Member Functions**:
     - [`CLI::empty::Option::Option`](#OptionOption)
     - [`CLI::empty::Option::Option`](#OptionOption)
-    - [`CLI::empty::Option::operator=`](#Optionoperator)
+    - [`CLI::empty::Option::operator=`](#Optionoperator=)
 - **Inherits From**:
-    - [`CLI::OptionBase`](#OptionBase)
+    - [`CLI::OptionBase`](#CLIOptionBase)
 
 **Methods**
 
@@ -448,7 +448,7 @@ The `Option` constructor initializes an `Option` object with a name, description
     - The `detail::split_names` function is called with `option_name` to split it into its constituent parts.
     - The `detail::get_names` function is then called with the split names and the `allow_non_standard` flag to populate the `snames_`, `lnames_`, and `pname_` member variables.
 - **Output**: The constructor does not return a value; it initializes an `Option` object.
-- **See also**: [`CLI::empty::Option`](#Option)  (Data Structure)
+- **See also**: [`CLI::empty::Option`](#emptyOption)  (Data Structure)
 
 
 ---
@@ -459,7 +459,7 @@ The `Option` constructor is deleted to prevent copying and assignment of `Option
     - The constructor `Option(const Option &) = delete;` is defined to delete the copy constructor, preventing the creation of a new `Option` object as a copy of an existing one.
     - The assignment operator `Option &operator=(const Option &) = delete;` is defined to delete the assignment operator, preventing the assignment of one `Option` object to another.
 - **Output**: There is no output as this is a constructor and assignment operator deletion.
-- **See also**: [`CLI::empty::Option`](#Option)  (Data Structure)
+- **See also**: [`CLI::empty::Option`](#emptyOption)  (Data Structure)
 
 
 ---
@@ -470,7 +470,7 @@ The assignment operator for the `Option` class is deleted, preventing assignment
     - The function is defined as a deleted function, meaning it cannot be used or called.
     - This prevents the assignment of one `Option` object to another, ensuring that `Option` objects are not accidentally copied or assigned.
 - **Output**: There is no output as the function is deleted and cannot be used.
-- **See also**: [`CLI::empty::Option`](#Option)  (Data Structure)
+- **See also**: [`CLI::empty::Option`](#emptyOption)  (Data Structure)
 
 
 
@@ -594,17 +594,17 @@ Retrieves the value of the `run_callback_for_default_` member variable.
 
 ---
 ### needs<!-- {{#callable:CLI::needs}} -->
-The [`needs`](#needs) function registers multiple dependencies for an `Option` object, ensuring that specified options must be present.
+The [`needs`](#CLIneeds) function registers multiple dependencies for an `Option` object, ensuring that specified options must be present.
 - **Inputs**:
     - `opt`: The first option that is required.
     - `opt1`: The second option that is required.
     - `args`: Additional options that are required, allowing for a variable number of arguments.
 - **Control Flow**:
-    - The function first calls [`needs`](#needs) with the first option `opt` to register it as a dependency.
-    - Then, it recursively calls [`needs`](#needs) with the second option `opt1` and any additional arguments `args...` to register them as dependencies.
+    - The function first calls [`needs`](#CLIneeds) with the first option `opt` to register it as a dependency.
+    - Then, it recursively calls [`needs`](#CLIneeds) with the second option `opt1` and any additional arguments `args...` to register them as dependencies.
 - **Output**: Returns a pointer to the `Option` object, allowing for method chaining.
 - **Functions called**:
-    - [`CLI::needs`](#needs)
+    - [`CLI::needs`](#CLIneeds)
 
 
 ---
@@ -843,7 +843,7 @@ The `get_items_expected` function returns the minimum number of expected items f
     - The function directly calls another function, `get_items_expected_min()`, to retrieve the minimum expected items.
 - **Output**: The output is an integer representing the minimum number of expected items.
 - **Functions called**:
-    - [`CLI::get_items_expected_min`](#get_items_expected_min)
+    - [`CLI::get_items_expected_min`](#CLIget_items_expected_min)
 
 
 ---
@@ -986,9 +986,9 @@ The `results` function retrieves and converts the results of an option into a sp
     - [`CLI::Option::_add_result`](impl/Option_inl.hpp.driver.md#Option_add_result)
     - [`CLI::Option::_validate_results`](impl/Option_inl.hpp.driver.md#Option_validate_results)
     - [`CLI::Option::_reduce_results`](impl/Option_inl.hpp.driver.md#Option_reduce_results)
-    - [`CLI::CLI11_INLINE::reduced_results`](impl/Option_inl.hpp.driver.md#11_INLINEreduced_results)
+    - [`CLI::CLI11_INLINE::reduced_results`](impl/Option_inl.hpp.driver.md#CLI11_INLINEreduced_results)
     - [`ConversionError::ConversionError`](Error.hpp.driver.md#ConversionErrorConversionError)
-    - [`CLI::get_name`](Validators.hpp.driver.md#get_name)
+    - [`CLI::get_name`](Validators.hpp.driver.md#CLIget_name)
 
 
 ---
@@ -998,11 +998,11 @@ Converts the results of an option into a specified type.
     - `T`: The type to which the results will be converted.
 - **Control Flow**:
     - Declares a variable `output` of type `T`.
-    - Calls the [`results`](#results) method with `output` as an argument to populate it with the parsed results.
+    - Calls the [`results`](#CLIresults) method with `output` as an argument to populate it with the parsed results.
     - Returns the populated `output` variable.
 - **Output**: Returns an object of type `T` that contains the converted results from the option.
 - **Functions called**:
-    - [`CLI::results`](#results)
+    - [`CLI::results`](#CLIresults)
 
 
 ---
@@ -1034,11 +1034,11 @@ The `type_name` function sets a custom type name for an option using a provided 
 - **Inputs**:
     - `typeval`: A string representing the custom type name to be set for the option.
 - **Control Flow**:
-    - The function calls [`type_name_fn`](#type_name_fn) with a lambda that captures `typeval` and returns it.
+    - The function calls [`type_name_fn`](#CLItype_name_fn) with a lambda that captures `typeval` and returns it.
     - The function then returns the current instance of the `Option` class.
 - **Output**: Returns a pointer to the current `Option` instance.
 - **Functions called**:
-    - [`CLI::type_name_fn`](#type_name_fn)
+    - [`CLI::type_name_fn`](#CLItype_name_fn)
 
 
 ---
@@ -1102,6 +1102,6 @@ Sets a default value for an option and validates it.
     - [`CLI::Option::run_callback`](impl/Option_inl.hpp.driver.md#Optionrun_callback)
     - [`CLI::Option::_validate_results`](impl/Option_inl.hpp.driver.md#Option_validate_results)
     - [`ConversionError::ConversionError`](Error.hpp.driver.md#ConversionErrorConversionError)
-    - [`CLI::get_name`](Validators.hpp.driver.md#get_name)
+    - [`CLI::get_name`](Validators.hpp.driver.md#CLIget_name)
 
 

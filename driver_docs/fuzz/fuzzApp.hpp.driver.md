@@ -40,7 +40,7 @@ The `intWrapper64` constructor initializes an `intWrapper64` object with a defau
     - The default constructor `intWrapper64()` initializes the `val` member variable to 0.
     - The explicit constructor `intWrapper64(int64_t v)` initializes the `val` member variable with the provided integer value `v`.
 - **Output**: An instance of the `intWrapper64` class with its `val` member variable initialized to either 0 or the specified integer value.
-- **See also**: [`CLI::intWrapper64`](#intWrapper64)  (Data Structure)
+- **See also**: [`CLI::intWrapper64`](#CLIintWrapper64)  (Data Structure)
 
 
 ---
@@ -52,7 +52,7 @@ The `intWrapper64` constructor initializes an `intWrapper64` object with a given
     - The constructor is explicitly called with a 64-bit integer argument `v`.
     - The member variable `val` is initialized with the value of `v`.
 - **Output**: An `intWrapper64` object initialized with the specified 64-bit integer value.
-- **See also**: [`CLI::intWrapper64`](#intWrapper64)  (Data Structure)
+- **See also**: [`CLI::intWrapper64`](#CLIintWrapper64)  (Data Structure)
 
 
 ---
@@ -62,7 +62,7 @@ The `value` function returns the stored integer value from an `intWrapper64` obj
 - **Control Flow**:
     - The function is a simple getter that directly returns the private member variable `val`.
 - **Output**: The function returns an `int64_t` value, which is the stored integer in the `intWrapper64` object.
-- **See also**: [`CLI::intWrapper64`](#intWrapper64)  (Data Structure)
+- **See also**: [`CLI::intWrapper64`](#CLIintWrapper64)  (Data Structure)
 
 
 
@@ -88,7 +88,7 @@ The `doubleWrapper` constructor initializes an instance of the `doubleWrapper` c
     - The default constructor `doubleWrapper()` initializes the `val` member variable to 0.0.
     - The explicit constructor `doubleWrapper(double v)` initializes the `val` member variable to the provided double value `v`.
 - **Output**: An instance of the `doubleWrapper` class with the `val` member variable set to the specified or default value.
-- **See also**: [`CLI::doubleWrapper`](#doubleWrapper)  (Data Structure)
+- **See also**: [`CLI::doubleWrapper`](#CLIdoubleWrapper)  (Data Structure)
 
 
 ---
@@ -100,7 +100,7 @@ The `doubleWrapper` constructor initializes an instance of the `doubleWrapper` c
     - The constructor is called with a double argument `v`.
     - The member variable `val` is initialized with the value of `v`.
 - **Output**: An instance of the `doubleWrapper` class with its `val` member variable set to the provided double value.
-- **See also**: [`CLI::doubleWrapper`](#doubleWrapper)  (Data Structure)
+- **See also**: [`CLI::doubleWrapper`](#CLIdoubleWrapper)  (Data Structure)
 
 
 ---
@@ -110,7 +110,7 @@ The `value` function returns the stored double value from a `doubleWrapper` obje
 - **Control Flow**:
     - The function is a simple getter that directly returns the private member variable `val`.
 - **Output**: The function returns a `double`, which is the value stored in the `val` member of the `doubleWrapper` class.
-- **See also**: [`CLI::doubleWrapper`](#doubleWrapper)  (Data Structure)
+- **See also**: [`CLI::doubleWrapper`](#CLIdoubleWrapper)  (Data Structure)
 
 
 
@@ -135,7 +135,7 @@ The `stringWrapper` constructor initializes an instance of the `stringWrapper` c
     - The default constructor `stringWrapper()` initializes the `val` member to an empty string.
     - The explicit constructor `stringWrapper(std::string_view v)` initializes the `val` member with the value of `v`.
 - **Output**: An instance of the `stringWrapper` class with its `val` member initialized.
-- **See also**: [`CLI::stringWrapper`](#stringWrapper)  (Data Structure)
+- **See also**: [`CLI::stringWrapper`](#CLIstringWrapper)  (Data Structure)
 
 
 ---
@@ -147,7 +147,7 @@ The `stringWrapper` constructor initializes an instance of the `stringWrapper` c
     - The constructor takes a `std::string_view` as an argument.
     - It initializes the private member `val` with the provided string value.
 - **Output**: An instance of the `stringWrapper` class initialized with the specified string value.
-- **See also**: [`CLI::stringWrapper`](#stringWrapper)  (Data Structure)
+- **See also**: [`CLI::stringWrapper`](#CLIstringWrapper)  (Data Structure)
 
 
 
@@ -220,7 +220,7 @@ The `FuzzApp` constructor initializes a `FuzzApp` object with default values.
     - The constructor `FuzzApp()` is defined as `default`, meaning it uses the compiler-generated default constructor.
     - No additional initialization logic is provided in the constructor body.
 - **Output**: A `FuzzApp` object is created with all its member variables initialized to their default values.
-- **See also**: [`CLI::FuzzApp`](#FuzzApp)  (Data Structure)
+- **See also**: [`CLI::FuzzApp`](#CLIFuzzApp)  (Data Structure)
 
 
 ---
@@ -230,7 +230,7 @@ The `supports_config_file` method checks if the FuzzApp instance allows configur
 - **Control Flow**:
     - The method returns the negation of the private member variable `non_config_required`.
 - **Output**: A boolean value indicating whether the FuzzApp instance supports configuration via a config file.
-- **See also**: [`CLI::FuzzApp`](#FuzzApp)  (Data Structure)
+- **See also**: [`CLI::FuzzApp`](#CLIFuzzApp)  (Data Structure)
 
 
 
