@@ -65,7 +65,7 @@ The `get_allow_config_extras` function returns the current mode for handling ext
 - **Control Flow**:
     - The function directly returns the value of the `allow_config_extras_` member variable, which is of type `config_extras_mode`.
 - **Output**: The function returns a value of type `config_extras_mode`, which indicates how extra configuration options are handled.
-- **See also**: [`CLI::config_extras_mode`](#config_extras_mode)  (Data Structure)
+- **See also**: [`CLI::config_extras_mode`](#CLIconfig_extras_mode)  (Data Structure)
 
 
 
@@ -226,7 +226,7 @@ Constructs an `App` instance with optional description and name, and sets a help
 - **Output**: This function does not return a value; it initializes an instance of the `App` class.
 - **Functions called**:
     - [`CLI::App::set_help_flag`](impl/App_inl.hpp.driver.md#Appset_help_flag)
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -240,7 +240,7 @@ The `App` constructor initializes a command line application with a description 
     - It calls a private constructor to set up the application with the provided description and name.
     - The help flag is set to provide usage information.
 - **Output**: The constructor does not return a value but initializes an instance of the `App` class.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -251,7 +251,7 @@ The `~App` function is a virtual destructor for the `App` class, ensuring proper
     - The destructor is declared as virtual, allowing derived classes to override it and ensuring that the correct destructor is called for derived class instances.
     - The destructor has a default implementation, which means it does not perform any specific actions beyond what is automatically handled by the compiler.
 - **Output**: The function does not return any value, as it is a destructor; its purpose is to clean up resources associated with the `App` instance.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -265,7 +265,7 @@ Sets a callback function to be executed upon completion of parsing, either immed
     - If `immediate_callback_` is false, the provided callback is assigned to `final_callback_` using `std::move`.
     - Returns a pointer to the current `App` instance.
 - **Output**: Returns a pointer to the current `App` instance, allowing for method chaining.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -277,7 +277,7 @@ Sets a final callback function to be executed when all processing in the `App` c
     - The function takes a `std::function<void()>` as an argument and moves it into the member variable `final_callback_`.
     - It returns a pointer to the current instance of the `App` class.
 - **Output**: Returns a pointer to the current `App` instance, allowing for method chaining.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -289,7 +289,7 @@ Sets a callback function to be executed when parsing is complete.
     - The function takes a `std::function<void()>` as an argument and moves it into the member variable `parse_complete_callback_`.
     - It returns a pointer to the current instance of the `App` class.
 - **Output**: Returns a pointer to the current `App` instance, allowing for method chaining.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -301,7 +301,7 @@ Sets a pre-parse callback function for the `App` instance.
     - The input callback function `pp_callback` is moved into the member variable `pre_parse_callback_`.
     - The function returns a pointer to the current `App` instance.
 - **Output**: Returns a pointer to the current `App` instance.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -313,7 +313,7 @@ Sets the `allow_extras_` flag to indicate whether extra command line arguments s
     - The function sets the member variable `allow_extras_` to the value of the `allow` parameter.
     - It returns a pointer to the current instance of the `App` class.
 - **Output**: Returns a pointer to the current `App` instance, allowing for method chaining.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -325,7 +325,7 @@ Sets the `required_` flag for the `App` instance to indicate whether the subcomm
     - The function assigns the input boolean value to the member variable `required_`.
     - It then returns a pointer to the current `App` instance.
 - **Output**: Returns a pointer to the current `App` instance, allowing for method chaining.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -337,7 +337,7 @@ Sets the `disabled_` flag of the `App` instance to indicate whether the subcomma
     - The function sets the member variable `disabled_` to the value of the `disable` parameter.
     - It then returns a pointer to the current instance of the `App` class.
 - **Output**: Returns a pointer to the current `App` instance.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -349,7 +349,7 @@ Sets the `silent_` flag of the `App` class to control whether the subcommand is 
     - The function assigns the value of the `silence` parameter to the member variable `silent_`.
     - The function returns a pointer to the current instance of the `App` class.
 - **Output**: Returns a pointer to the current `App` instance, allowing for method chaining.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -361,7 +361,7 @@ Sets the flag to allow or disallow non-standard option names in the application.
     - The function sets the member variable `allow_non_standard_options_` to the value of the `allowed` parameter.
     - The function returns a pointer to the current instance of the `App` class.
 - **Output**: Returns a pointer to the current `App` instance, allowing for method chaining.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -373,7 +373,7 @@ Sets the flag for allowing prefix matching of subcommands.
     - The function sets the member variable `allow_prefix_matching_` to the value of the `allowed` parameter.
     - It then returns a pointer to the current instance of the `App` class.
 - **Output**: Returns a pointer to the current instance of the `App` class, allowing for method chaining.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -385,7 +385,7 @@ Sets the default startup mode for the application to either disabled or stable b
     - If the 'disable' parameter is true, the 'default_startup' is set to 'disabled'.
     - If 'disable' is false, 'default_startup' is set to 'enabled' if it was previously 'enabled', otherwise it is set to 'stable'.
 - **Output**: Returns a pointer to the current instance of the App class.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -397,7 +397,7 @@ Sets the default startup mode for the application based on the input parameter.
     - If 'enable' is true, set 'default_startup' to 'startup_mode::enabled'.
     - If 'enable' is false, check if 'default_startup' is 'startup_mode::disabled'; if so, keep it as 'disabled', otherwise set it to 'stable'.
 - **Output**: Returns a pointer to the current instance of the `App` class.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -409,7 +409,7 @@ Sets the flag for validating positional arguments in the `App` class.
     - The function sets the member variable `validate_positionals_` to the value of the `validate` parameter.
     - It then returns a pointer to the current instance of the `App` class.
 - **Output**: Returns a pointer to the current instance of the `App` class.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -422,7 +422,7 @@ Sets the flag for validating optional arguments in the `App` class.
     - It assigns the value of `validate` to the member variable `validate_optional_arguments_`.
     - Finally, it returns a pointer to the current instance of the `App` class.
 - **Output**: Returns a pointer to the current `App` instance.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -434,7 +434,7 @@ Sets the configuration mode for handling extra arguments in the application.
     - If the `allow` parameter is true, set `allow_config_extras_` to `config_extras_mode::capture` and `allow_extras_` to true.
     - If the `allow` parameter is false, set `allow_config_extras_` to `config_extras_mode::error`.
 - **Output**: Returns a pointer to the current `App` instance.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -446,7 +446,7 @@ Sets the configuration mode for handling extra arguments in configuration files.
     - The function assigns the provided `mode` to the member variable `allow_config_extras_`.
     - It then returns a pointer to the current instance of the `App` class.
 - **Output**: Returns a pointer to the current instance of the `App` class.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -458,7 +458,7 @@ Sets the `prefix_command_` flag to determine if the application should stop proc
     - The function sets the member variable `prefix_command_` to the value of `is_prefix`.
     - The function returns a pointer to the current instance of the `App` class.
 - **Output**: Returns a pointer to the current instance of the `App` class.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -470,7 +470,7 @@ Sets the `allow_windows_style_options_` flag to enable or disable Windows-style 
     - The function sets the member variable `allow_windows_style_options_` to the provided boolean value.
     - It returns a pointer to the current instance of the `App` class.
 - **Output**: Returns a pointer to the current instance of the `App` class, allowing for method chaining.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -482,7 +482,7 @@ Sets the `positionals_at_end_` flag to indicate whether positional arguments sho
     - The function assigns the input boolean `value` to the member variable `positionals_at_end_`.
     - It then returns a pointer to the current instance of the `App` class.
 - **Output**: Returns a pointer to the current instance of the `App` class, allowing for method chaining.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -494,7 +494,7 @@ Sets the `configurable_` flag of the `App` class to indicate if the subcommand c
     - The function assigns the input boolean value to the member variable `configurable_`.
     - It then returns a pointer to the current instance of the `App` class.
 - **Output**: Returns a pointer to the current instance of the `App` class, allowing for method chaining.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -506,7 +506,7 @@ Sets the formatter for help printing in the `App` class.
     - The function assigns the provided `fmt` to the member variable `formatter_` of the `App` class.
     - It then returns a pointer to the current instance of the `App` class.
 - **Output**: Returns a pointer to the current `App` instance, allowing for method chaining.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -518,7 +518,7 @@ The `formatter_fn` method sets a custom formatter for the `App` instance.
     - The method assigns a new `FormatterLambda` instance, initialized with the provided `fmt` function, to the `formatter_` member variable.
     - It then returns a pointer to the current `App` instance.
 - **Output**: Returns a pointer to the current `App` instance.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -530,7 +530,7 @@ The `config_formatter` method sets the configuration formatter for the `App` ins
     - The method assigns the provided `fmt` argument to the member variable `config_formatter_`.
     - It then returns a pointer to the current instance of `App`.
 - **Output**: Returns a pointer to the current `App` instance.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -542,7 +542,7 @@ Checks if the subcommand has been parsed from the command line.
     - The function evaluates the member variable `parsed_` which counts the number of times the command/subcommand was parsed.
     - It returns true if `parsed_` is greater than 0, indicating that the subcommand was indeed parsed.
 - **Output**: Returns a boolean value: true if the subcommand was parsed, false otherwise.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -553,7 +553,7 @@ The `option_defaults` function returns a pointer to the `OptionDefaults` object 
     - The function directly accesses the `option_defaults_` member of the `App` class.
     - It returns the address of the `option_defaults_` member, which is of type `OptionDefaults`.
 - **Output**: The output is a pointer to an `OptionDefaults` object, allowing access to the default values for options within the `App` instance.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -572,7 +572,7 @@ The [`add_option`](#Appadd_option) function adds a command-line option that assi
 - **Output**: Returns a pointer to the `Option` object that was created and added.
 - **Functions called**:
     - [`CLI::App::add_option`](#Appadd_option)
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -590,7 +590,7 @@ Adds an option to a command line application without using a stream.
 - **Output**: Returns a pointer to the created `Option` object.
 - **Functions called**:
     - [`CLI::App::add_option`](impl/App_inl.hpp.driver.md#Appadd_option)
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -609,7 +609,7 @@ Adds an option to a command-line interface that executes a callback function wit
 - **Output**: Returns a pointer to the created `Option` object that represents the added option.
 - **Functions called**:
     - [`CLI::App::add_option`](impl/App_inl.hpp.driver.md#Appadd_option)
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -623,7 +623,7 @@ Adds an option to the command line application with a specified name.
 - **Output**: Returns a pointer to the `Option` object that was created for the specified option name.
 - **Functions called**:
     - [`CLI::App::add_option`](impl/App_inl.hpp.driver.md#Appadd_option)
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -638,7 +638,7 @@ The [`add_option`](impl/App_inl.hpp.driver.md#Appadd_option) function adds an op
 - **Output**: Returns a pointer to the `Option` object that was added to the application.
 - **Functions called**:
     - [`CLI::App::add_option`](impl/App_inl.hpp.driver.md#Appadd_option)
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -652,7 +652,7 @@ The `add_flag` function adds a flag option to the command line application.
 - **Output**: Returns a pointer to the `Option` object that represents the added flag.
 - **Functions called**:
     - [`CLI::App::_add_flag_internal`](impl/App_inl.hpp.driver.md#App_add_flag_internal)
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -667,7 +667,7 @@ The `add_flag` function adds a flag option to a command-line application with an
 - **Output**: Returns a pointer to an `Option` object representing the added flag.
 - **Functions called**:
     - [`CLI::App::_add_flag_internal`](impl/App_inl.hpp.driver.md#App_add_flag_internal)
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -684,9 +684,9 @@ Adds a flag to the command line interface that modifies a variable based on user
     - Finally, it applies default modifiers to the created option using `detail::default_flag_modifiers`.
 - **Output**: Returns a pointer to the `Option` object representing the added flag.
 - **Functions called**:
-    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#lexical_cast)
+    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#detaillexical_cast)
     - [`CLI::App::_add_flag_internal`](impl/App_inl.hpp.driver.md#App_add_flag_internal)
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -703,9 +703,9 @@ The `add_flag` function adds a command-line flag that can capture multiple resul
     - It sets the multi-option policy to 'TakeAll' to allow capturing multiple values and runs the default callback.
 - **Output**: Returns a pointer to an `Option` object representing the added flag.
 - **Functions called**:
-    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#lexical_cast)
+    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#detaillexical_cast)
     - [`CLI::App::_add_flag_internal`](impl/App_inl.hpp.driver.md#App_add_flag_internal)
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -720,7 +720,7 @@ The `add_flag` function adds a command-line flag to an application, allowing it 
 - **Output**: Returns a pointer to an `Option` object representing the added flag.
 - **Functions called**:
     - [`CLI::App::add_flag_function`](impl/App_inl.hpp.driver.md#Appadd_flag_function)
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -741,7 +741,7 @@ Creates and adds an option group to the application.
 - **Functions called**:
     - [`IncorrectConstruction`](Error.hpp.driver.md#IncorrectConstruction)
     - [`Option_group::add_subcommand`](#Option_groupadd_subcommand)
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -753,7 +753,7 @@ Sets the group name for the `App` instance and returns a pointer to the instance
     - The function assigns the provided `group_name` to the member variable `group_` of the `App` instance.
     - It then returns a pointer to the current instance of `App` (i.e., `this`).
 - **Output**: Returns a pointer to the `App` instance after updating its group name.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -765,7 +765,7 @@ Sets the minimum required subcommands to 1 and allows unlimited maximum subcomma
     - Sets `require_subcommand_max_` to 0, indicating there is no upper limit on the number of subcommands allowed.
     - Returns a pointer to the current `App` instance.
 - **Output**: Returns a pointer to the current `App` instance, allowing for method chaining.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -778,7 +778,7 @@ The `require_subcommand` function sets the minimum and maximum number of require
     - If `value` is negative, it sets `require_subcommand_min_` to 0 and `require_subcommand_max_` to the absolute value of `value`.
     - If `value` is non-negative, it sets both `require_subcommand_min_` and `require_subcommand_max_` to the value of `value`.
 - **Output**: Returns a pointer to the current `App` instance, allowing for method chaining.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -792,7 +792,7 @@ Sets the minimum and maximum number of required subcommands for the `App` instan
     - Assigns the value of `max` to the member variable `require_subcommand_max_`.
     - Returns a pointer to the current `App` instance.
 - **Output**: Returns a pointer to the current `App` instance, allowing for method chaining.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -804,7 +804,7 @@ The `require_option` function sets the minimum required options for the `App` cl
     - It sets `require_option_min_` to 1, indicating that at least one option is required.
     - It sets `require_option_max_` to 0, indicating that there is no upper limit on the number of options.
 - **Output**: The function returns a pointer to the current instance of the `App` class.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -816,7 +816,7 @@ The `require_option` function sets the minimum and maximum number of required op
     - If `value` is less than 0, it sets `require_option_min_` to 0 and `require_option_max_` to the absolute value of `value`.
     - If `value` is 0 or greater, it sets both `require_option_min_` and `require_option_max_` to `value`.
 - **Output**: Returns a pointer to the current `App` instance, allowing for method chaining.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -830,7 +830,7 @@ The `require_option` function sets the minimum and maximum number of options req
     - The function assigns the input `max` to the member variable `require_option_max_`.
     - Finally, it returns a pointer to the current `App` instance.
 - **Output**: Returns a pointer to the current `App` instance, allowing for method chaining.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -842,7 +842,7 @@ Sets the `fallthrough_` flag to allow options to be passed to parent commands.
     - The function sets the member variable `fallthrough_` to the value of the input parameter `value`.
     - It then returns a pointer to the current instance of the `App` class.
 - **Output**: Returns a pointer to the current instance of the `App` class.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -854,7 +854,7 @@ Sets the `subcommand_fallthrough_` flag to the specified boolean value.
     - The function assigns the input boolean value to the member variable `subcommand_fallthrough_`.
     - The function returns a pointer to the current instance of the `App` class.
 - **Output**: Returns a pointer to the current instance of the `App` class.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -865,7 +865,7 @@ The `pre_callback` function is a virtual method that allows subclasses to execut
     - The function does not contain any logic or control flow statements.
     - It serves as a placeholder for derived classes to implement their own pre-parsing logic.
 - **Output**: The function does not return any value and is intended to be overridden by subclasses to perform actions before parsing.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 ---
@@ -877,7 +877,7 @@ Sets a custom failure message function for the `App` class.
     - The function assigns the provided `function` to the member variable `failure_message_` of the `App` class.
     - No additional logic or control flow is present; the function simply performs the assignment.
 - **Output**: This function does not return a value; it modifies the internal state of the `App` instance by setting the `failure_message_` member.
-- **See also**: [`CLI::App`](#App)  (Data Structure)
+- **See also**: [`CLI::App`](#CLIApp)  (Data Structure)
 
 
 
@@ -948,13 +948,13 @@ The `add_option` function adds an existing `Option` to the `Option_group` by mov
 - **Inputs**:
     - `opt`: A pointer to the `Option` object that is to be added to the `Option_group`.
 - **Control Flow**:
-    - Check if the current `Option_group` has a parent using `get_parent()`; if not, throw an [`OptionNotFound`](Error.hpp.driver.md#OptionNotFound) exception with a message indicating the option cannot be located.
+    - Check if the current `Option_group` has a parent using `get_parent()`; if not, throw an [`OptionNotFound`](Error.hpp.driver.md#HorribleErrorOptionNotFound) exception with a message indicating the option cannot be located.
     - Call the `_move_option` method on the parent to move the `Option` from its current location to the `Option_group`.
     - Return the `Option` pointer `opt`.
 - **Output**: Returns the pointer to the `Option` that was added to the `Option_group`.
 - **Functions called**:
-    - [`CLI::get_parent`](#get_parent)
-    - [`HorribleError::OptionNotFound`](Error.hpp.driver.md#OptionNotFound)
+    - [`CLI::get_parent`](#CLIget_parent)
+    - [`HorribleError::OptionNotFound`](Error.hpp.driver.md#HorribleErrorOptionNotFound)
 - **See also**: [`Option_group`](#Option_group)  (Data Structure)
 
 
@@ -1030,7 +1030,7 @@ The `parse_arg` function is a template function that forwards its arguments to t
     - It uses `std::forward` to perfectly forward the arguments to the `_parse_arg` method of the `App` class.
     - The function returns the result of the `_parse_arg` method call.
 - **Output**: The function returns the result of the `_parse_arg` method call on the `App` object, with the return type being deduced using `decltype(auto)`.
-- **See also**: [`detail::AppFriend`](#AppFriend)  (Data Structure)
+- **See also**: [`detail::AppFriend`](#detailAppFriend)  (Data Structure)
 
 
 ---
@@ -1044,7 +1044,7 @@ The `parse_subcommand` function is a template function that forwards its argumen
     - It uses `std::forward` to perfectly forward the arguments to the `_parse_subcommand` method of the `App` class.
     - The function returns the result of the `_parse_subcommand` method call.
 - **Output**: The function returns the result of the `_parse_subcommand` method, which is the type determined by the method's return type.
-- **See also**: [`detail::AppFriend`](#AppFriend)  (Data Structure)
+- **See also**: [`detail::AppFriend`](#detailAppFriend)  (Data Structure)
 
 
 ---
@@ -1058,7 +1058,7 @@ The `parse_arg` function is a template function that forwards its arguments to t
     - It uses `std::forward` to perfectly forward the arguments to the `_parse_arg` method of the `App` class, preserving their value categories (lvalue or rvalue).
     - The return type is deduced using `std::result_of` to match the return type of the `_parse_arg` method when called with the given arguments.
 - **Output**: The output is the result of calling the `_parse_arg` method on the `App` object with the forwarded arguments, and its type is deduced to match the return type of `_parse_arg`.
-- **See also**: [`detail::AppFriend`](#AppFriend)  (Data Structure)
+- **See also**: [`detail::AppFriend`](#detailAppFriend)  (Data Structure)
 
 
 ---
@@ -1072,7 +1072,7 @@ The `parse_subcommand` function is a template function that forwards its argumen
     - It uses perfect forwarding to pass the arguments to the `_parse_subcommand` method of the `App` class.
     - The return type is deduced using `std::result_of` to match the return type of the `_parse_subcommand` method.
 - **Output**: The output is the result of the `_parse_subcommand` method of the `App` class, with the return type deduced to match that method's return type.
-- **See also**: [`detail::AppFriend`](#AppFriend)  (Data Structure)
+- **See also**: [`detail::AppFriend`](#detailAppFriend)  (Data Structure)
 
 
 ---
@@ -1085,7 +1085,7 @@ The `get_fallthrough_parent` function retrieves the fallthrough parent of a give
     - It calls the private method `_get_fallthrough_parent` on the `App` object pointed to by the input pointer.
     - The result of the method call is returned.
 - **Output**: A pointer to the fallthrough parent `App` object.
-- **See also**: [`detail::AppFriend`](#AppFriend)  (Data Structure)
+- **See also**: [`detail::AppFriend`](#detailAppFriend)  (Data Structure)
 
 
 
@@ -1118,13 +1118,13 @@ The `get_subcommand` method retrieves a subcommand by its name from the current 
     - [`CLI::App::set_help_flag`](impl/App_inl.hpp.driver.md#Appset_help_flag)
     - [`CLI::App::add_option`](#Appadd_option)
     - [`CLI::App::_add_flag_internal`](impl/App_inl.hpp.driver.md#App_add_flag_internal)
-    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#lexical_cast)
+    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#detaillexical_cast)
     - [`CLI::App::add_flag_function`](impl/App_inl.hpp.driver.md#Appadd_flag_function)
     - [`IncorrectConstruction`](Error.hpp.driver.md#IncorrectConstruction)
     - [`Option_group::add_subcommand`](#Option_groupadd_subcommand)
     - [`CLI::CLI11_INLINE::App_p::get_subcommand_ptr`](impl/App_inl.hpp.driver.md#App_pget_subcommand_ptr)
     - [`CLI::CLI11_INLINE::size_t::count_all`](impl/App_inl.hpp.driver.md#size_tcount_all)
-    - [`CLI::get_option`](#get_option)
+    - [`CLI::get_option`](#CLIget_option)
 
 
 ---
@@ -1281,11 +1281,11 @@ The `operator[]` function provides a convenient way to access an `Option` object
 - **Inputs**:
     - `option_name`: A pointer to a C-style string (const char*) representing the name of the option to retrieve.
 - **Control Flow**:
-    - The function calls [`get_option`](#get_option) with the provided `option_name`.
-    - The result of [`get_option`](#get_option) is returned directly.
+    - The function calls [`get_option`](#CLIget_option) with the provided `option_name`.
+    - The result of [`get_option`](#CLIget_option) is returned directly.
 - **Output**: Returns a pointer to the `Option` object associated with the specified name, or nullptr if the option does not exist.
 - **Functions called**:
-    - [`CLI::get_option`](#get_option)
+    - [`CLI::get_option`](#CLIget_option)
 
 
 ---
@@ -1654,10 +1654,10 @@ Marks a specified option in an `App` as deprecated.
     - `replacement`: An optional string that specifies a replacement option for the deprecated one.
 - **Control Flow**:
     - The function retrieves the option associated with the given `option_name` from the `app` using the `get_option` method.
-    - It then calls the overloaded [`deprecate_option`](impl/App_inl.hpp.driver.md#deprecate_option) function, passing the retrieved option and the optional replacement string.
+    - It then calls the overloaded [`deprecate_option`](impl/App_inl.hpp.driver.md#CLIdeprecate_option) function, passing the retrieved option and the optional replacement string.
 - **Output**: This function does not return a value; it modifies the state of the specified option to indicate that it is deprecated.
 - **Functions called**:
-    - [`CLI::deprecate_option`](impl/App_inl.hpp.driver.md#deprecate_option)
+    - [`CLI::deprecate_option`](impl/App_inl.hpp.driver.md#CLIdeprecate_option)
 
 
 ---

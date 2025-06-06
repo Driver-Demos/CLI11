@@ -28,7 +28,7 @@ The code is structured to be part of a larger library, likely intended for inclu
 
 ---
 ### Validator<!-- {{#data_structure:CLI::Validator}} -->
-- **Description**: [See definition](../Validators.hpp.driver.md#Validator)
+- **Description**: [See definition](../Validators.hpp.driver.md#CLIValidator)
 - **Member Functions**:
     - [`CLI::Validator::Validator`](../Validators.hpp.driver.md#ValidatorValidator)
     - [`CLI::Validator::Validator`](../Validators.hpp.driver.md#ValidatorValidator)
@@ -58,7 +58,7 @@ The `operator&` function combines two `Validator` objects into a new `Validator`
     - The `application_index_` of `newval` is set to the `application_index_` of the current validator.
     - The new `Validator` object `newval` is returned.
 - **Output**: A new `Validator` object that represents the logical AND combination of the two input validators.
-- **See also**: [`CLI::Validator`](../Validators.hpp.driver.md#Validator)  (Data Structure)
+- **See also**: [`CLI::Validator`](../Validators.hpp.driver.md#CLIValidator)  (Data Structure)
 
 
 ---
@@ -75,7 +75,7 @@ The `operator|` function combines two `Validator` objects using a logical OR ope
     - The `application_index_` of `newval` is set to the `application_index_` of the current validator.
     - The new `Validator` object `newval` is returned.
 - **Output**: A new `Validator` object that represents the logical OR combination of the two input validators.
-- **See also**: [`CLI::Validator`](../Validators.hpp.driver.md#Validator)  (Data Structure)
+- **See also**: [`CLI::Validator`](../Validators.hpp.driver.md#CLIValidator)  (Data Structure)
 
 
 ---
@@ -89,7 +89,7 @@ The `operator!` function in the `Validator` class creates a new `Validator` obje
     - The `active_` and `application_index_` properties of the current `Validator` are copied to `newval`.
     - The modified `newval` is returned.
 - **Output**: A new `Validator` object with negated logic and modified description and validation function.
-- **See also**: [`CLI::Validator`](../Validators.hpp.driver.md#Validator)  (Data Structure)
+- **See also**: [`CLI::Validator`](../Validators.hpp.driver.md#CLIValidator)  (Data Structure)
 
 
 ---
@@ -106,7 +106,7 @@ The `_merge_description` function combines the description functions of two `Val
     - Check if either description is empty; if so, concatenate them directly.
     - If both descriptions are non-empty, format them with parentheses and the merger string in between.
 - **Output**: The function does not return a value; it modifies the `desc_function_` member of the current `Validator` object.
-- **See also**: [`CLI::Validator`](../Validators.hpp.driver.md#Validator)  (Data Structure)
+- **See also**: [`CLI::Validator`](../Validators.hpp.driver.md#CLIValidator)  (Data Structure)
 
 
 
@@ -181,7 +181,7 @@ The `AsSizeValue` constructor initializes an `AsNumberWithUnit` object with a si
     - If `kb_is_1000` is false, it sets the description to "SIZE [b, kb(=1024b), ...]".
 - **Output**: The function does not return a value; it initializes an object of the `AsSizeValue` class.
 - **Functions called**:
-    - [`CLI::CLI11_INLINE::description`](#11_INLINEdescription)
+    - [`CLI::CLI11_INLINE::description`](#CLI11_INLINEdescription)
 
 
 ---

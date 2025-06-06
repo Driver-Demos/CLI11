@@ -73,13 +73,13 @@ The `trim` function removes specified characters from both ends of a given strin
     - `str`: A reference to the string that needs to be trimmed.
     - `filter`: A string containing characters to be removed from both ends of the input string.
 - **Control Flow**:
-    - The function calls [`rtrim`](impl/StringTools_inl.hpp.driver.md#rtrim) on the input string `str` with the `filter` to remove specified characters from the right end.
-    - The result of [`rtrim`](impl/StringTools_inl.hpp.driver.md#rtrim) is then passed to [`ltrim`](impl/StringTools_inl.hpp.driver.md#ltrim) with the same `filter` to remove specified characters from the left end.
+    - The function calls [`rtrim`](impl/StringTools_inl.hpp.driver.md#detailrtrim) on the input string `str` with the `filter` to remove specified characters from the right end.
+    - The result of [`rtrim`](impl/StringTools_inl.hpp.driver.md#detailrtrim) is then passed to [`ltrim`](impl/StringTools_inl.hpp.driver.md#detailltrim) with the same `filter` to remove specified characters from the left end.
     - The final trimmed string is returned.
 - **Output**: A reference to the modified input string `str` with specified characters removed from both ends.
 - **Functions called**:
-    - [`CLI::detail::ltrim`](impl/StringTools_inl.hpp.driver.md#ltrim)
-    - [`CLI::detail::rtrim`](impl/StringTools_inl.hpp.driver.md#rtrim)
+    - [`CLI::detail::ltrim`](impl/StringTools_inl.hpp.driver.md#detailltrim)
+    - [`CLI::detail::rtrim`](impl/StringTools_inl.hpp.driver.md#detailrtrim)
 
 
 ---
@@ -90,11 +90,11 @@ The `trim_copy` function creates a trimmed copy of a given string by removing sp
     - `filter`: A string containing characters to be removed from both ends of the original string.
 - **Control Flow**:
     - A copy of the input string `str` is created and stored in a local variable `s`.
-    - The [`trim`](#trim) function is called with `s` and `filter` as arguments to remove specified characters from both ends of `s`.
+    - The [`trim`](#detailtrim) function is called with `s` and `filter` as arguments to remove specified characters from both ends of `s`.
     - The trimmed string is returned as the output.
 - **Output**: A new string that is a trimmed version of the input string, with specified characters removed from both ends.
 - **Functions called**:
-    - [`CLI::detail::trim`](#trim)
+    - [`CLI::detail::trim`](#detailtrim)
 
 
 ---

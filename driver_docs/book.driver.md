@@ -1,6 +1,6 @@
 ## Folders
 - **[chapters](book/chapters.driver.md)**: The `chapters` folder in the `CLI11` codebase contains comprehensive documentation files that cover various aspects of using the CLI11 library, including installation, basic and advanced usage, configuration, flags, options, subcommands, formatting, internals, toolkits, and validators.
-- **[code](book/code.driver.md)**: The `code` folder in the `CLI11` codebase contains example C++ files and a CMake configuration file that demonstrate the usage of the CLI11 library for building command-line applications with various features such as flag parsing and basic command emulation.
+- **[code](book/code.driver.md)**: The `code` folder in the `CLI11` codebase contains example C++ files and a CMake configuration file that demonstrate the usage of the CLI11 library for building command-line applications with various features such as flag parsing and mimicking git commands.
 
 ## Files
 - **[.gitignore](book/.gitignore.driver.md)**: The `.gitignore` file in the `CLI11/book` directory specifies patterns for files and directories to be ignored by Git, including Node.js dependencies, build outputs, and specific file types like `.epub`, `.mobi`, and `.pdf`.

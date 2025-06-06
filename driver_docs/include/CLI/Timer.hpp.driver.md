@@ -48,7 +48,7 @@ The `Simple` function concatenates a title and a time string with a colon separa
     - The function takes two string inputs, `title` and `time`.
     - It concatenates these two strings with a colon and a space in between.
 - **Output**: A single string that combines the title and time with a colon and space separator.
-- **See also**: [`CLI::Timer`](#Timer)  (Data Structure)
+- **See also**: [`CLI::Timer`](#CLITimer)  (Data Structure)
 
 
 ---
@@ -61,7 +61,7 @@ The `Big` function formats a title and time string into a visually distinct bloc
     - The function constructs a string by concatenating a header line, the title and time formatted within a bordered line, and a footer line.
     - The header and footer lines consist of a series of dashes to create a visual block around the title and time.
 - **Output**: A formatted string that includes the title and time within a bordered block of text.
-- **See also**: [`CLI::Timer`](#Timer)  (Data Structure)
+- **See also**: [`CLI::Timer`](#CLITimer)  (Data Structure)
 
 
 ---
@@ -75,7 +75,7 @@ The `Timer` constructor initializes a timer object with a specified title and a 
     - The `time_print_` member is initialized with the provided `time_print` function, also using `std::move`.
     - The `start_` member is set to the current time using `clock::now()`, marking the start of the timer.
 - **Output**: The constructor does not return any value as it is used to initialize an instance of the `Timer` class.
-- **See also**: [`CLI::Timer`](#Timer)  (Data Structure)
+- **See also**: [`CLI::Timer`](#CLITimer)  (Data Structure)
 
 
 ---
@@ -98,7 +98,7 @@ The `time_it` function measures the execution time of a given function by runnin
 - **Output**: A `std::string` containing the average execution time per run and the number of tries.
 - **Functions called**:
     - [`CLI::Timer::make_time_str`](#Timermake_time_str)
-- **See also**: [`CLI::Timer`](#Timer)  (Data Structure)
+- **See also**: [`CLI::Timer`](#CLITimer)  (Data Structure)
 
 
 ---
@@ -113,7 +113,7 @@ The [`make_time_str`](#Timermake_time_str) function calculates the elapsed time 
 - **Output**: A formatted string representing the average elapsed time per cycle.
 - **Functions called**:
     - [`CLI::Timer::make_time_str`](#Timermake_time_str)
-- **See also**: [`CLI::Timer`](#Timer)  (Data Structure)
+- **See also**: [`CLI::Timer`](#CLITimer)  (Data Structure)
 
 
 ---
@@ -128,7 +128,7 @@ The `make_time_str` function formats a given time in seconds into a human-readab
     - Check if `time` is less than 1; if true, convert `time` to milliseconds and return the formatted string using `print_it`.
     - If none of the above conditions are met, return the formatted string using `print_it` with seconds as the unit.
 - **Output**: A string representing the formatted time with the appropriate unit.
-- **See also**: [`CLI::Timer`](#Timer)  (Data Structure)
+- **See also**: [`CLI::Timer`](#CLITimer)  (Data Structure)
 
 
 ---
@@ -141,7 +141,7 @@ The `to_string` method generates a formatted string representation of the timer'
 - **Output**: A `std::string` that contains the formatted title and elapsed time of the timer.
 - **Functions called**:
     - [`CLI::Timer::make_time_str`](#Timermake_time_str)
-- **See also**: [`CLI::Timer`](#Timer)  (Data Structure)
+- **See also**: [`CLI::Timer`](#CLITimer)  (Data Structure)
 
 
 ---
@@ -153,7 +153,7 @@ The `operator/` function sets the number of cycles for a `Timer` object, which i
     - The function assigns the input value `val` to the `cycles` member variable of the `Timer` object.
     - The function returns a reference to the current `Timer` object (`*this`).
 - **Output**: A reference to the current `Timer` object, allowing for method chaining.
-- **See also**: [`CLI::Timer`](#Timer)  (Data Structure)
+- **See also**: [`CLI::Timer`](#CLITimer)  (Data Structure)
 
 
 
@@ -179,7 +179,7 @@ The `AutoTimer` constructor initializes an `AutoTimer` object with a title and a
     - The constructor is explicitly defined to handle compatibility with GCC 4.7, which does not support inheriting constructors.
     - It calls the base class `Timer` constructor with the provided `title` and `time_print` arguments.
 - **Output**: An `AutoTimer` object is created and initialized with the specified title and time printing function.
-- **See also**: [`CLI::AutoTimer`](#AutoTimer)  (Data Structure)
+- **See also**: [`CLI::AutoTimer`](#CLIAutoTimer)  (Data Structure)
 
 
 ---
@@ -193,7 +193,7 @@ The destructor of the `AutoTimer` class outputs the formatted timing string to t
 - **Output**: The function outputs a formatted string representing the elapsed time to the standard output.
 - **Functions called**:
     - [`CLI::Timer::to_string`](#Timerto_string)
-- **See also**: [`CLI::AutoTimer`](#AutoTimer)  (Data Structure)
+- **See also**: [`CLI::AutoTimer`](#CLIAutoTimer)  (Data Structure)
 
 
 

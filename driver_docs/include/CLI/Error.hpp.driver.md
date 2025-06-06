@@ -936,7 +936,7 @@ The `OptionNotFound` constructor initializes an error object indicating that a s
     - The constructor takes a single string argument `name`.
     - It calls another constructor of the same class with a message constructed by appending ' not found' to the `name` and an exit code `ExitCodes::OptionNotFound`.
 - **Output**: An `OptionNotFound` object is created, which is a type of error indicating that a specified option was not found.
-- **See also**: [`HorribleError::OptionNotFound`](#OptionNotFound)  (Data Structure)
+- **See also**: [`HorribleError::OptionNotFound`](#HorribleErrorOptionNotFound)  (Data Structure)
 
 
 
