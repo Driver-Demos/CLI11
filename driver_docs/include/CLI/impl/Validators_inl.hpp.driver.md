@@ -181,7 +181,7 @@ The `AsSizeValue` constructor initializes an `AsNumberWithUnit` object with a si
     - If `kb_is_1000` is false, it sets the description to "SIZE [b, kb(=1024b), ...]".
 - **Output**: The function does not return a value; it initializes an object of the `AsSizeValue` class.
 - **Functions called**:
-    - [`CLI::CLI11_INLINE::description`](#CLI11_INLINEdescription)
+    - [`CLI::CLI11_INLINE::description`](#11_INLINEdescription)
 
 
 ---

@@ -96,14 +96,14 @@ The `narrow_impl` function converts a wide character string to a narrow (UTF-8) 
     - If on Windows and `CLI11_HAS_CODECVT` is defined, use `std::wstring_convert` with `std::codecvt_utf8_utf16<wchar_t>` to convert the string.
     - If not on Windows and `CLI11_HAS_CODECVT` is defined, use `std::wstring_convert` with `std::codecvt_utf8<wchar_t>` to convert the string.
     - If `CLI11_HAS_CODECVT` is not defined, ignore `str_size` and initialize a `std::mbstate_t` state object for conversion.
-    - Store the current locale and set a new Unicode locale using [`set_unicode_locale`](#detailset_unicode_locale).
+    - Store the current locale and set a new Unicode locale using [`set_unicode_locale`](#set_unicode_locale).
     - Calculate the size of the resulting narrow string using `std::wcsrtombs` and handle conversion errors by throwing a `std::runtime_error`.
     - Allocate a string of the calculated size and perform the conversion using `std::wcsrtombs`.
     - Restore the original locale using a scope guard.
 - **Output**: A `std::string` containing the converted narrow (UTF-8) string.
 - **Functions called**:
     - [`CLI::detail::CLI11_INLINE::scope_guard_t<F>::scope_guard`](#scope_guard_t<F>scope_guard)
-    - [`CLI::detail::set_unicode_locale`](#detailset_unicode_locale)
+    - [`CLI::detail::set_unicode_locale`](#set_unicode_locale)
 
 
 ---
@@ -124,7 +124,7 @@ The `widen_impl` function converts a narrow character string to a wide character
 - **Output**: A `std::wstring` that represents the converted wide character string.
 - **Functions called**:
     - [`CLI::detail::CLI11_INLINE::scope_guard_t<F>::scope_guard`](#scope_guard_t<F>scope_guard)
-    - [`CLI::detail::set_unicode_locale`](#detailset_unicode_locale)
+    - [`CLI::detail::set_unicode_locale`](#set_unicode_locale)
 
 
 ---

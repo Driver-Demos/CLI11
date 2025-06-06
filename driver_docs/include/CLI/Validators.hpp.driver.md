@@ -295,12 +295,12 @@ The `TypeValidator` class template is a specialized validator that checks if a g
     - `validator_name`: A string representing the name of the validator, used for identification and description purposes.
 - **Control Flow**:
     - The constructor initializes the `Validator` base class with a name and a lambda function for validation.
-    - The lambda function attempts to parse the input string into the `DesiredType` using [`lexical_cast`](TypeTools.hpp.driver.md#detaillexical_cast).
+    - The lambda function attempts to parse the input string into the `DesiredType` using [`lexical_cast`](TypeTools.hpp.driver.md#lexical_cast).
     - If parsing fails, it returns an error message indicating the failure and the expected type.
     - If parsing succeeds, it returns an empty string indicating successful validation.
 - **Output**: An instance of `TypeValidator` that can validate strings against the specified `DesiredType`, returning an error message if validation fails or an empty string if it succeeds.
 - **Functions called**:
-    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#detaillexical_cast)
+    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#lexical_cast)
 - **See also**: [`TypeValidator`](#TypeValidator)  (Data Structure)
 
 
@@ -355,7 +355,7 @@ The `Range` constructor template creates a validator that checks if a given inpu
 - **Output**: The constructor does not return a value, but it sets up a validation function that returns an error message if the input is invalid, or an empty string if valid.
 - **Functions called**:
     - [`CLI::Validator::description`](#Validatordescription)
-    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#detaillexical_cast)
+    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#lexical_cast)
 - **See also**: [`Range`](#Range)  (Data Structure)
 
 
@@ -395,7 +395,7 @@ The `Bound` constructor template creates a validator that ensures a given input 
 - **Control Flow**:
     - A stringstream is used to create a description of the bounded type and range, which is then set as the validator's description.
     - A lambda function is assigned to `func_`, capturing `min_val` and `max_val`.
-    - The lambda attempts to convert the input string to type T using [`lexical_cast`](TypeTools.hpp.driver.md#detaillexical_cast).
+    - The lambda attempts to convert the input string to type T using [`lexical_cast`](TypeTools.hpp.driver.md#lexical_cast).
     - If conversion fails, it returns an error message indicating the input could not be converted.
     - If the converted value is less than `min_val`, the input is set to `min_val` as a string.
     - If the converted value is greater than `max_val`, the input is set to `max_val` as a string.
@@ -403,7 +403,7 @@ The `Bound` constructor template creates a validator that ensures a given input 
 - **Output**: The function returns a string, which is empty if the input is valid and within range, or an error message if the input could not be converted.
 - **Functions called**:
     - [`CLI::Validator::description`](#Validatordescription)
-    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#detaillexical_cast)
+    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#lexical_cast)
 - **See also**: [`Bound`](#Bound)  (Data Structure)
 
 
@@ -485,7 +485,7 @@ The `IsMember` function template checks if a given item is a member of a specifi
     - Determine the type of elements in the set, accounting for smart pointers and maps.
     - Convert the filter function to a `std::function` if it is not already one.
     - Define a description function that generates a string representation of the set's contents.
-    - Define a validation function (`func_`) that attempts to convert the input string to the appropriate type using [`lexical_cast`](TypeTools.hpp.driver.md#detaillexical_cast).
+    - Define a validation function (`func_`) that attempts to convert the input string to the appropriate type using [`lexical_cast`](TypeTools.hpp.driver.md#lexical_cast).
     - If conversion fails, throw a [`ValidationError`](Error.hpp.driver.md#ValidationError).
     - If a filter function is provided, apply it to the converted input.
     - Search the set for the transformed input using the `search` function, which may apply the filter function to set elements as well.
@@ -493,7 +493,7 @@ The `IsMember` function template checks if a given item is a member of a specifi
     - If the item is not found, return an error message indicating the item is not in the set.
 - **Output**: A string indicating success (empty) or an error message if the item is not found in the set.
 - **Functions called**:
-    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#detaillexical_cast)
+    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#lexical_cast)
     - [`ValidationError`](Error.hpp.driver.md#ValidationError)
 - **See also**: [`IsMember`](#IsMember)  (Data Structure)
 
@@ -567,7 +567,7 @@ The `Transformer` function template constructs a transformation object that maps
     - It determines the type of the contained item and adapts it to a local item type, converting bad types to good ones if necessary.
     - A local copy of the filter function is created using `std::function`.
     - A description function is set up to generate a map representation of the current mapping contents.
-    - The main transformation function (`func_`) is defined, which attempts to convert the input string to the local item type using [`lexical_cast`](TypeTools.hpp.driver.md#detaillexical_cast).
+    - The main transformation function (`func_`) is defined, which attempts to convert the input string to the local item type using [`lexical_cast`](TypeTools.hpp.driver.md#lexical_cast).
     - If conversion fails, an empty string is returned, indicating no match in the mapping.
     - If a filter function is provided, it is applied to the converted input value.
     - The function searches the mapping for the filtered value using the `detail::search` function.
@@ -575,7 +575,7 @@ The `Transformer` function template constructs a transformation object that maps
     - The function returns an empty string if the transformation is successful, or an empty string if no match is found.
 - **Output**: The function does not return a value directly; instead, it modifies the input string in place if a transformation is successful, or leaves it unchanged if not.
 - **Functions called**:
-    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#detaillexical_cast)
+    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#lexical_cast)
 - **See also**: [`Transformer`](#Transformer)  (Data Structure)
 
 
@@ -658,7 +658,7 @@ The `CheckedTransformer` function template constructs a transformer that validat
     - A description function `tfunc` is defined to generate a string representation of the mapping.
     - The `desc_function_` member is set to `tfunc`.
     - The `func_` member is defined as a lambda that processes input strings.
-    - The lambda attempts to convert the input string to a local item type using [`lexical_cast`](TypeTools.hpp.driver.md#detaillexical_cast).
+    - The lambda attempts to convert the input string to a local item type using [`lexical_cast`](TypeTools.hpp.driver.md#lexical_cast).
     - If conversion is successful, the filter function is applied if it exists.
     - The mapping is searched for the converted and filtered value using `detail::search`.
     - If a match is found, the input string is updated with the corresponding mapped value.
@@ -666,7 +666,7 @@ The `CheckedTransformer` function template constructs a transformer that validat
     - If no match is found, an error message is returned indicating the check failed.
 - **Output**: The function does not return a value directly; it sets up a transformer that modifies input strings and returns error messages if validation fails.
 - **Functions called**:
-    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#detaillexical_cast)
+    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#lexical_cast)
 - **See also**: [`CheckedTransformer`](#CheckedTransformer)  (Data Structure)
 
 
@@ -725,7 +725,7 @@ The `AsNumberWithUnit` constructor initializes a validator that converts a strin
     - [`CLI::Validator::description`](#Validatordescription)
     - [`AsNumberWithUnit::validate_mapping`](#AsNumberWithUnitvalidate_mapping)
     - [`ValidationError`](Error.hpp.driver.md#ValidationError)
-    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#detaillexical_cast)
+    - [`CLI::detail::lexical_cast`](TypeTools.hpp.driver.md#lexical_cast)
 - **See also**: [`AsNumberWithUnit`](#AsNumberWithUnit)  (Data Structure)
 
 
@@ -917,20 +917,20 @@ The `generate_map` function creates a string representation of a map, optionally
 
 ---
 ### search<!-- {{#callable:detail::search}} -->
-The [`search`](#detailsearch) function attempts to find a value in a set, optionally applying a filter function to transform elements during the search.
+The [`search`](#search) function attempts to find a value in a set, optionally applying a filter function to transform elements during the search.
 - **Inputs**:
     - `set`: A collection of elements to search through, which can be any type that supports iteration.
     - `val`: The value to search for within the set.
     - `filter_function`: A function that transforms elements of the set during the search; it is optional and can be null.
 - **Control Flow**:
-    - The function first attempts a fast search using an overloaded [`search`](#detailsearch) function that does not apply the filter function.
+    - The function first attempts a fast search using an overloaded [`search`](#search) function that does not apply the filter function.
     - If the fast search is successful or if the filter function is null, the result of the fast search is returned.
     - If the fast search fails and a filter function is provided, a linear search is performed over the set.
     - During the linear search, each element is transformed using the filter function before being compared to the search value.
     - The function returns a pair indicating whether the value was found and an iterator to the found element or the end of the set.
 - **Output**: A `std::pair` where the first element is a boolean indicating if the value was found, and the second element is an iterator to the found element or the end of the set.
 - **Functions called**:
-    - [`detail::search`](#detailsearch)
+    - [`detail::search`](#search)
 
 
 ---

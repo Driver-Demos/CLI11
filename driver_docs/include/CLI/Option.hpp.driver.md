@@ -594,17 +594,17 @@ Retrieves the value of the `run_callback_for_default_` member variable.
 
 ---
 ### needs<!-- {{#callable:CLI::needs}} -->
-The [`needs`](#CLIneeds) function registers multiple dependencies for an `Option` object, ensuring that specified options must be present.
+The [`needs`](#needs) function registers multiple dependencies for an `Option` object, ensuring that specified options must be present.
 - **Inputs**:
     - `opt`: The first option that is required.
     - `opt1`: The second option that is required.
     - `args`: Additional options that are required, allowing for a variable number of arguments.
 - **Control Flow**:
-    - The function first calls [`needs`](#CLIneeds) with the first option `opt` to register it as a dependency.
-    - Then, it recursively calls [`needs`](#CLIneeds) with the second option `opt1` and any additional arguments `args...` to register them as dependencies.
+    - The function first calls [`needs`](#needs) with the first option `opt` to register it as a dependency.
+    - Then, it recursively calls [`needs`](#needs) with the second option `opt1` and any additional arguments `args...` to register them as dependencies.
 - **Output**: Returns a pointer to the `Option` object, allowing for method chaining.
 - **Functions called**:
-    - [`CLI::needs`](#CLIneeds)
+    - [`CLI::needs`](#needs)
 
 
 ---
@@ -843,7 +843,7 @@ The `get_items_expected` function returns the minimum number of expected items f
     - The function directly calls another function, `get_items_expected_min()`, to retrieve the minimum expected items.
 - **Output**: The output is an integer representing the minimum number of expected items.
 - **Functions called**:
-    - [`CLI::get_items_expected_min`](#CLIget_items_expected_min)
+    - [`CLI::get_items_expected_min`](#get_items_expected_min)
 
 
 ---
@@ -986,9 +986,9 @@ The `results` function retrieves and converts the results of an option into a sp
     - [`CLI::Option::_add_result`](impl/Option_inl.hpp.driver.md#Option_add_result)
     - [`CLI::Option::_validate_results`](impl/Option_inl.hpp.driver.md#Option_validate_results)
     - [`CLI::Option::_reduce_results`](impl/Option_inl.hpp.driver.md#Option_reduce_results)
-    - [`CLI::CLI11_INLINE::reduced_results`](impl/Option_inl.hpp.driver.md#CLI11_INLINEreduced_results)
+    - [`CLI::CLI11_INLINE::reduced_results`](impl/Option_inl.hpp.driver.md#11_INLINEreduced_results)
     - [`ConversionError::ConversionError`](Error.hpp.driver.md#ConversionErrorConversionError)
-    - [`CLI::get_name`](Validators.hpp.driver.md#CLIget_name)
+    - [`CLI::get_name`](Validators.hpp.driver.md#get_name)
 
 
 ---
@@ -998,11 +998,11 @@ Converts the results of an option into a specified type.
     - `T`: The type to which the results will be converted.
 - **Control Flow**:
     - Declares a variable `output` of type `T`.
-    - Calls the [`results`](#CLIresults) method with `output` as an argument to populate it with the parsed results.
+    - Calls the [`results`](#results) method with `output` as an argument to populate it with the parsed results.
     - Returns the populated `output` variable.
 - **Output**: Returns an object of type `T` that contains the converted results from the option.
 - **Functions called**:
-    - [`CLI::results`](#CLIresults)
+    - [`CLI::results`](#results)
 
 
 ---
@@ -1034,11 +1034,11 @@ The `type_name` function sets a custom type name for an option using a provided 
 - **Inputs**:
     - `typeval`: A string representing the custom type name to be set for the option.
 - **Control Flow**:
-    - The function calls [`type_name_fn`](#CLItype_name_fn) with a lambda that captures `typeval` and returns it.
+    - The function calls [`type_name_fn`](#type_name_fn) with a lambda that captures `typeval` and returns it.
     - The function then returns the current instance of the `Option` class.
 - **Output**: Returns a pointer to the current `Option` instance.
 - **Functions called**:
-    - [`CLI::type_name_fn`](#CLItype_name_fn)
+    - [`CLI::type_name_fn`](#type_name_fn)
 
 
 ---
@@ -1102,6 +1102,6 @@ Sets a default value for an option and validates it.
     - [`CLI::Option::run_callback`](impl/Option_inl.hpp.driver.md#Optionrun_callback)
     - [`CLI::Option::_validate_results`](impl/Option_inl.hpp.driver.md#Option_validate_results)
     - [`ConversionError::ConversionError`](Error.hpp.driver.md#ConversionErrorConversionError)
-    - [`CLI::get_name`](Validators.hpp.driver.md#CLIget_name)
+    - [`CLI::get_name`](Validators.hpp.driver.md#get_name)
 
 
