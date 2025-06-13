@@ -1,2 +1,0 @@
-# Purpose
-The file defines a Bazel build rule for a C++ library named "cli11". It specifies the source files with a glob pattern for `.cpp` files in the `src` directory and header files with a glob pattern for `.hpp` files in the `include` directory. The rule includes a local define `CLI11_COMPILE`, sets the `strip_include_prefix` to remove the `/include` prefix from headers, and makes the library publicly visible.
