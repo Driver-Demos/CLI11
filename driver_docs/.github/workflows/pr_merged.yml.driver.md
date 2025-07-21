@@ -1,2 +1,0 @@
-# Purpose
-The file is a GitHub Actions workflow configuration that triggers when a pull request is closed. It defines a job named "Changelog needed" that runs on the latest Ubuntu environment. If the pull request is merged, it uses the "actions/labeler" action to apply labels based on the configuration specified in the `.github/labeler_merged.yml` file, utilizing the repository's GitHub token for authentication.
